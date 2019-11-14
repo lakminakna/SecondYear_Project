@@ -53,12 +53,15 @@
                         </div>
                     </div>
                 </div>
+               
+                @include('home.driver')
                 @include('home.landowner')
             </div>
         </header>
-        @include('home.driver')
-
-        @include('home.admin')
+        
+        
+                @include('home.admin')
+        
 
         <footer class="footer">
             <div class="container">
