@@ -11,11 +11,14 @@
     <thead>
         <tr>
           <td>ID</td>
-          <td>Name</td>
-          <td>Email</td>
-          <td>Job Title</td>
-          <td>City</td>
-          <td>Country</td>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Gender</td>
+          <td>Contact Number</td>
+          <td>Address</td>
+          <td>Liscence ID</td>
+          <td>NIC</td>
+          <td>Username</td>
           <td colspan = 2>Actions</td>
         </tr>
     </thead>
@@ -23,11 +26,14 @@
         @foreach($drivers as $driver)
         <tr>
             <td>{{$driver->id}}</td>
-            <td>{{$driver->first_name}} {{$driver->last_name}}</td>
-            <td>{{$driver->email}}</td>
-            <td>{{$driver->job_title}}</td>
-            <td>{{$driver->city}}</td>
-            <td>{{$driver->country}}</td>
+            <td>{{$driver->first_name}} </td>
+            <td>{{$driver->last_name}}</td>
+            <td>{{$driver->gender}}</td>
+            <td>{{$driver->contact_no}}</td>
+            <td>{{$driver->address}}</td>
+            <td>{{$driver->licence_id}}</td>
+            <td>{{$driver->nic}}</td>
+            <td>{{$driver->username}}</td>
             <td>
                 <a href="{{ route('drivers.edit',$driver->id)}}" class="btn btn-primary">Edit</a>
             </td>

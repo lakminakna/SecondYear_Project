@@ -10,12 +10,13 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>ID</td>
+          <td>Parking Space ID</td>q
           <td>Name</td>
-          <td>Email</td>
-          <td>Job Title</td>
-          <td>City</td>
-          <td>Country</td>
+          <td>Address</td>
+          <td>Description</td>
+          <td>Open Till</td>
+          <td>Open From</td>
+          <td>Reservation status</td>
           <td colspan = 2>Actions</td>
         </tr>
     </thead>

@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-6">
       <div class="header_video">
-        <a href="#"><img src="{{ URL::asset('assets/landowner/img/park_1.jpg')}}" alt="profile Pic" height="350" width="500"></a>
+        <a href="#"><img src="{{ URL::asset('assets/landowner/img/park_1.jpg')}}" alt="Parking space image" height="350" width="500"></a>
           <!-- <iframe src="https://www.youtube.com/embed/bM4G1Toe3h0" frameborder="0" allowfullscreen></iframe> -->
       </div>
     </div>

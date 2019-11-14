@@ -29,11 +29,11 @@
             </div>
 
             <div class="form-group">
-                <label for="email">Email:</label>
+                <label for="email">Gender:</label>
                 <input type="text" class="form-control" name="email" value={{ $driver->email }} />
             </div>
             <div class="form-group">
-                <label for="city">City:</label>
+                <label for="city">Contact Number:</label>
                 <input type="text" class="form-control" name="city" value={{ $driver->city }} />
             </div>
             <div class="form-group">

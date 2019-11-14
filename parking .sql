@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2019 at 03:18 PM
+-- Generation Time: Nov 14, 2019 at 08:14 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -164,6 +164,27 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `parking_opentime`
+--
+
+CREATE TABLE `parking_opentime` (
+  `parking_space_id` int(11) NOT NULL,
+  `date` varchar(100) NOT NULL,
+  `open_from` time NOT NULL,
+  `open_till` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `parking_opentime`
+--
+
+INSERT INTO `parking_opentime` (`parking_space_id`, `date`, `open_from`, `open_till`) VALUES
+(3, 'Monday', '07:00:00', '17:00:00'),
+(3, 'Tuesday', '12:00:00', '31:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `parking_spaces`
 --
 
@@ -174,8 +195,6 @@ CREATE TABLE `parking_spaces` (
   `name` varchar(100) DEFAULT NULL,
   `address` varchar(250) NOT NULL,
   `description` longtext NOT NULL,
-  `open_from` time NOT NULL,
-  `open_till` time NOT NULL,
   `open_status` varchar(20) NOT NULL,
   `reservation_status` varchar(20) NOT NULL,
   `verified` tinyint(1) NOT NULL,
@@ -186,11 +205,11 @@ CREATE TABLE `parking_spaces` (
 -- Dumping data for table `parking_spaces`
 --
 
-INSERT INTO `parking_spaces` (`id`, `landowner_id`, `admin_id`, `name`, `address`, `description`, `open_from`, `open_till`, `open_status`, `reservation_status`, `verified`, `created_at`) VALUES
-(1, 1, 1, 'Marino mall', 'pettah', '', '07:00:00', '17:00:00', '1', '1', 0, '2019-11-12 11:19:23'),
-(2, 2, 3, 'kelaniya', 'kelaniya', '', '07:00:00', '17:00:00', '0', '1', 1, '2019-11-14 04:02:21'),
-(3, 2, 1, 'Pannipitiya', 'Mawatha', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '07:00:00', '17:00:00', '1', '0', 1, '2019-11-14 07:20:45'),
-(4, 3, 1, 'Kottawa', 'Bank', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '12:00:00', '23:30:00', '0', '1', 1, '2019-11-14 07:22:28');
+INSERT INTO `parking_spaces` (`id`, `landowner_id`, `admin_id`, `name`, `address`, `description`, `open_status`, `reservation_status`, `verified`, `created_at`) VALUES
+(1, 1, 1, 'Marino mall', 'pettah', '', '1', '1', 0, '2019-11-12 11:19:23'),
+(2, 2, 3, 'kelaniya', 'kelaniya', '', '0', '1', 1, '2019-11-14 04:02:21'),
+(3, 2, 1, 'Pannipitiya', 'Mawatha', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '1', '0', 1, '2019-11-14 07:20:45'),
+(4, 3, 1, 'Kottawa', 'Bank', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '0', '1', 1, '2019-11-14 07:22:28');
 
 -- --------------------------------------------------------
 
@@ -366,6 +385,12 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `parking_opentime`
+--
+ALTER TABLE `parking_opentime`
+  ADD PRIMARY KEY (`parking_space_id`,`date`);
+
+--
 -- Indexes for table `parking_spaces`
 --
 ALTER TABLE `parking_spaces`
@@ -488,6 +513,12 @@ ALTER TABLE `vehicles`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `parking_opentime`
+--
+ALTER TABLE `parking_opentime`
+  ADD CONSTRAINT `parking_space_opentime` FOREIGN KEY (`parking_space_id`) REFERENCES `parking_spaces` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `parking_spaces`

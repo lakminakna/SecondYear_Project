@@ -17,14 +17,14 @@
                             <ul class="verticalCarouselGroup vc_list" style="transform: translateY(-135px);">
                                 <li>
                                     <div class="vertical_text">
-                                        <img src="{{ URL::asset('assets/img/vertical_text_images.jpg')}}" alt="">
+                                        <!-- <img src="{{ URL::asset('assets/img/vertical_text_images.jpg')}}" alt=""> -->
                                         <h4>John Doe</h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="vertical_text">
-                                        <img src="{{ URL::asset('assets/img/vertical_text_images1.jpg')}}" alt="">
+                                        <!-- <img src="{{ URL::asset('assets/img/vertical_text_images1.jpg')}}" alt=""> -->
                                         <h4>Khalessi</h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
                                     </div>
@@ -127,20 +127,20 @@
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
                                     </div>
                                 </li>
-                                <li>
+                                <!-- <li> 
                                     <div class="vertical_text">
                                         <img src="{{ URL::asset('assets/img/vertical_text_images.jpg')}}" alt="">
                                         <h4>John Doe</h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
-                                    </div>
-                                </li>
-                                <li>
+                                    </div>-->
+                                
+                                <!-- <li> 
                                     <div class="vertical_text">
                                         <img src="{{ URL::asset('assets/img/vertical_text_images1.jpg')}}" alt="">
                                         <h4>Khalessi</h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
                                     </div>
-                                </li>
+                                </li>-->
                             </ul>
                         </div>
                     </div>
@@ -149,7 +149,7 @@
         </div>
     </div>
 </section>
-<section class="team">
+<section class="team" >
     <div class="text">
         <h2>Our Team</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
@@ -159,52 +159,52 @@
             <div class="col-md-12">
                 <div class="flexslider">
                     <ul class="slides">
-                        <li data-thumb="{{ URL::asset('assets/img/sliderr1.png')}}">
+                        <li data-thumb="{{ URL::asset('assets/img/akna.jpg')}}">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
                                     <div class="team-text">
                                         <h3>Akna Lakmini</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-                                        <p><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a> </p>
+                                        <p>Second year undergraduate reading for the Information systems degree at University of Colombo School of Computing. Interested in UI/UX designing and Business analysis. </p>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li data-thumb="{{ URL::asset('assets/img/sliderr1.png')}}">
+                        <li data-thumb="{{ URL::asset('assets/img/keshi.jpg')}}">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
                                     <div class="team-text">
-                                        <h3>Sophie Turner</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-                                        <p><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a> </p>
+                                        <h3>Keshani Perera</h3>
+                                        <p>Second year undergraduate reading for the Information systems degree at University of Colombo School of Computing. Interested in websites designing. </p>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li data-thumb="{{ URL::asset('assets/img/sliderr1.png')}}">
+                        <li data-thumb="{{ URL::asset('assets/img/thushy.jpg')}}">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
                                     <div class="team-text">
-                                        <h3>Sophie Turner</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-                                        <p><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a> </p>
+                                        <h3>Thusy Walter</h3>
+                                        <p>Second year undergraduate reading for the Information systems degree at University of Colombo School of Computing. Interested in programming. </p>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <!--
-                        <li data-thumb="img/sliderr4.jpg">
+                        
+                        <li data-thumb="{{ URL::asset('assets/img/sk.jpg')}}">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
                                     <div class="team-text">
-                                        <h3>Sophie Turner</h3>
+                                        <h3>Lahiru Gamage</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-                                        <p><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a> </p>
+                                         
                                     </div>
                                 </div>
                             </div>
                         </li>
--->
+
                     </ul>
                 </div>
             </div>
@@ -214,7 +214,7 @@
 <section class="contact_area">
     <div class="text">
         <h2>Contact Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+        <p>We are here to help and answer any question you might have. We look forward to hearing from you.</p>
     </div>
     <div class="container">
         <div class="row">
@@ -228,7 +228,7 @@
                             <input type="text" name="" placeholder="Phone">
                         </div>
                         <textarea name="" placeholder="Message"></textarea>
-                        <label><p><input type="checkbox">subscribe to the newsletter</p></label>
+                        
                         <input type="submit" value="SEND">
                     </form>
                 </div>
