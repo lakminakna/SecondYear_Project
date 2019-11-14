@@ -32,8 +32,8 @@ Route::resource('vehicles', 'VehicleController');
 Route::get('lr', function () {return view('Register/landowner');});
 Route::resource('lrs', 'Auth/RegisterController');
 
-Route::get('cd1', function () {return view('home/Card/card1/base');});
-Route::get('cd2', function () {return view('home/Card/card2/base');});
+Route::get('login', function () {return view('home/signup_login/login/base');});
+Route::get('signup', function () {return view('home/signup_login/signup/base');});
 
 Route::get('tem1', function () {return view('Tem/1/index');});
 
@@ -42,4 +42,4 @@ Route::get('/', function () {return view('home/index');});
 
 
 
-Route::get('landpage', function () {return view('home/Card/card1/index');});
+Route::get('landpage', function () {return view('home/signup_login/login/index');});

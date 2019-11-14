@@ -10,7 +10,7 @@
           <h3>Ready to be a Driver? </h3>
           <h6>Earn a thousands of rupees a year by renting out your empty land as a parking space</h6>
           <a class="button white" href="#">F A Q <sub>s</sub></a>
-          <a class="button" href="cd2">Get Started</a>
+          <a class="button" href="signup">Get Started</a>
       </div>
     </div>
 </div>

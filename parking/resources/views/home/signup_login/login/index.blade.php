@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-@include('home/Card.card1.style_3')
+@include('home/signup_login.login.style_3')
 </head>
 <body>
 
@@ -16,15 +16,15 @@
 <!-- <button class="tablink" onclick="openPage('About', this, 'orange')">About</button> -->
 
 <div id="my_account" class="tabcontent">
-@include('home/Card.card1.tabs.my_account')
+@include('home/signup_login.login.tabs.my_account')
 </div>
 
 <div id="my_lands" class="tabcontent">
-@include('home/Card.card1.tabs.my_lands')
+@include('home/signup_login.login.tabs.my_lands')
 </div>
 
 <div id="reservations" class="tabcontent">
-@include('home/Card.card1.tabs.reservations')
+@include('home/signup_login.login.tabs.reservations')
 </div>
 
 <!-- <div id="About" class="tabcontent">

@@ -43,10 +43,10 @@
                             </ul>
                             <div class="sign_up">
                               <div class="col-md-7">
-                                <p><a href="cd2">sign up</a></p>
+                                <p><a href="signup">sign up</a></p>
                               </div>
                               <div class="col-md-5">
-                                <p><a href="cd1">Login</a></p>
+                                <p><a href="login">Login</a></p>
                               </div>
                             </div>
 
