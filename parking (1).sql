@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2019 at 08:25 AM
+-- Generation Time: Nov 14, 2019 at 03:18 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -46,6 +46,21 @@ INSERT INTO `admins` (`id`, `first_name`, `last_name`, `contact_no`, `username`,
 (1, 'Akna', 'Lakmini', 702222222, 'lakminakna', 'akna', '2019-11-12 10:12:32'),
 (2, 'Sahan', 'Madusanka', 705555555, 'sahan', 'sahan', '2019-11-12 10:15:22'),
 (3, 'keshani', 'perera', 703333333, 'keshani', 'keshani', '2019-11-12 10:16:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_us`
+--
+
+CREATE TABLE `contact_us` (
+  `first_name` varchar(500) NOT NULL,
+  `last_name` varchar(250) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `phone_no` int(10) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
