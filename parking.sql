@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2019 at 05:06 AM
+-- Generation Time: Nov 14, 2019 at 08:25 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -173,7 +173,9 @@ CREATE TABLE `parking_spaces` (
 
 INSERT INTO `parking_spaces` (`id`, `landowner_id`, `admin_id`, `name`, `address`, `description`, `open_from`, `open_till`, `open_status`, `reservation_status`, `verified`, `created_at`) VALUES
 (1, 1, 1, 'Marino mall', 'pettah', '', '07:00:00', '17:00:00', '1', '1', 0, '2019-11-12 11:19:23'),
-(2, 2, 3, 'kelaniya', 'kelaniya', '', '07:00:00', '17:00:00', '0', '1', 1, '2019-11-14 04:02:21');
+(2, 2, 3, 'kelaniya', 'kelaniya', '', '07:00:00', '17:00:00', '0', '1', 1, '2019-11-14 04:02:21'),
+(3, 2, 1, 'Pannipitiya', 'Mawatha', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '07:00:00', '17:00:00', '1', '0', 1, '2019-11-14 07:20:45'),
+(4, 3, 1, 'Kottawa', 'Bank', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '12:00:00', '23:30:00', '0', '1', 1, '2019-11-14 07:22:28');
 
 -- --------------------------------------------------------
 
@@ -249,7 +251,7 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`id`, `driver_id`, `parking_space_id`, `duration_from`, `duration_to`, `created_at`, `vehicle_type`) VALUES
-(1, 1, 1, '2019-11-12 04:00:00', '2019-11-12 17:00:00', '2019-11-12 08:00:22', ''),
+(1, 1, 1, '2019-11-12 04:00:00', '2019-11-12 17:00:00', '2019-11-14 07:07:57', 'car'),
 (2, 3, 1, '2019-11-12 22:00:00', '2019-11-13 04:00:00', '2019-11-12 16:58:45', '');
 
 -- --------------------------------------------------------
@@ -442,7 +444,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `parking_spaces`
 --
 ALTER TABLE `parking_spaces`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `reservations`
