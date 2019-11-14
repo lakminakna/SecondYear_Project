@@ -42,4 +42,5 @@ Route::get('/', function () {return view('home/index');});
 
 
 
-Route::get('landpage', function () {return view('home/signup_login/login/index');});
+// Route::get('landpage', function () {return view('home/signup_login/login/index');});
+Route::resource('landpage', 'LandpageController');

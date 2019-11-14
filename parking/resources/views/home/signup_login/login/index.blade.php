@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 @include('home/signup_login.login.style_3')
+@include('home/signup_login.login.style_4')
 </head>
 <body>
 
