@@ -17,7 +17,7 @@ class DriverController extends Controller
     {
        $drivers = Driver::all();
 
-        return view('drivers.index', compact('drivers'));
+        return view('crud.drivers.index', compact('drivers'));
 
     }
 
@@ -28,7 +28,7 @@ class DriverController extends Controller
      */
     public function create()
     {
-         return view('drivers.create');
+         return view('crud.drivers.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class DriverController extends Controller
     public function edit($id)
     {
          $driver = Driver::find($id);
-        return view('drivers.edit', compact('driver'));
+        return view('crud.drivers.edit', compact('driver'));
     }
 
     /**

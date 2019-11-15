@@ -31,7 +31,7 @@
           <p>Driver</p>
         </div>
       </div></a>
-      <a href="landpage">
+      <a href="landownerpage">
       <div class="items">
         <div class="icon-wrapper">
           <i class="fas fa-landmark"></i>
