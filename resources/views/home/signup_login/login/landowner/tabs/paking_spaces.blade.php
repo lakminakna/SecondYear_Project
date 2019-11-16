@@ -1,7 +1,7 @@
 <div class='widget'>
   <div id='evening' class="tab-content">
     <table class="group-table">
-      <caption>Paking Spaces</caption>
+      <caption>Parking Spaces</caption>
       <thead>
         <tr>
           <th>parking_space_id</th>
@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-          @foreach($paking_spaces as $paking_space)
+          @foreach($parking_spaces as $paking_space)
           <tr>
               <td>{{$paking_space->parking_space_id}}</td>
               <td>{{$paking_space->vehicle_type}}</td>

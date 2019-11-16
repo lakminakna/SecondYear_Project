@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Nov 16, 2019 at 02:20 PM
--- Server version: 5.7.28
--- PHP Version: 7.1.33-1+ubuntu18.04.1+deb.sury.org+1
+-- Host: 127.0.0.1
+-- Generation Time: Nov 16, 2019 at 07:22 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `parkme`
+-- Database: `parking`
 --
 
 -- --------------------------------------------------------
@@ -43,7 +45,10 @@ CREATE TABLE `admins` (
 INSERT INTO `admins` (`id`, `first_name`, `last_name`, `contact_no`, `username`, `password`, `created_at`) VALUES
 (1, 'Akna', 'Lakmini', 702222222, 'lakminakna', 'akna', '2019-11-12 10:12:32'),
 (2, 'Sahan', 'Madusanka', 705555555, 'sahan', 'sahan', '2019-11-12 10:15:22'),
-(3, 'keshani', 'perera', 703333333, 'keshani', 'keshani', '2019-11-12 10:16:04');
+(3, 'keshani', 'perera', 703333333, 'keshani', 'keshani', '2019-11-12 10:16:04'),
+(4, 'thushi', 'walter', 705555555, 'thushi', 'thushi', '2019-11-16 16:35:05'),
+(5, 'lahiru', 'gamage', 705522881, 'sk', 'sk', '2019-11-16 16:36:23'),
+(6, 'pawan', 'pawan', 98345689, 'pawan', 'pawan', '2019-11-16 16:36:23');
 
 -- --------------------------------------------------------
 
@@ -57,9 +62,20 @@ CREATE TABLE `contact_us` (
   `last_name` varchar(250) NOT NULL,
   `email` varchar(150) NOT NULL,
   `phone_no` int(10) NOT NULL,
-  `description` varchar(100) NOT NULL,
+  `description` varchar(1000) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`id`, `first_name`, `last_name`, `email`, `phone_no`, `description`, `created_at`) VALUES
+(1, 'lahiru', 'lahiru', 'lahiru@gmail.com', 982345674, 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography ', '2019-11-16 16:38:31'),
+(2, 'malmi', 'malmi', 'malmi@gmail.com', 983445678, 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '2019-11-16 16:39:44'),
+(3, 'sanduni', 'sanduni', 'sanduni@gmail.com', 984556738, 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '2019-11-16 16:40:25'),
+(4, 'pasan', 'pasan', 'pasan', 972334587, 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '2019-11-16 16:41:08'),
+(5, 'sachi', 'sachi', 'sachi@gmail.com', 987664982, 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '2019-11-16 16:41:40');
 
 -- --------------------------------------------------------
 
@@ -122,7 +138,7 @@ CREATE TABLE `landowners` (
   `contact_no` int(10) NOT NULL,
   `nic` varchar(12) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `no_of_lands` int(2) NOT NULL,
+  `image` longblob NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(250) NOT NULL,
   `verified` tinyint(1) NOT NULL,
@@ -133,10 +149,17 @@ CREATE TABLE `landowners` (
 -- Dumping data for table `landowners`
 --
 
-INSERT INTO `landowners` (`id`, `first_name`, `last_name`, `gender`, `contact_no`, `nic`, `email`, `no_of_lands`, `username`, `password`, `verified`, `created_at`) VALUES
-(1, 'saman', 'saman', 'Male', 715555555, '214578994v', 'saman@gmail.com', 3, 'sahan', 'sahan', 0, '2019-11-16 08:15:11'),
-(2, 'waruni', 'waruni', 'Female', 712222888, '124578964v', 'waruni@gmail.com', 1, 'waruni', 'waruni', 0, '2019-11-12 10:19:27'),
-(3, 'mahela', 'mahela', 'Male', 705555555, '214578994v', 'mahela@gmail.com', 2, 'mahela', 'mahela', 0, '2019-11-12 10:20:18');
+INSERT INTO `landowners` (`id`, `first_name`, `last_name`, `gender`, `contact_no`, `nic`, `email`, `image`, `username`, `password`, `verified`, `created_at`) VALUES
+(1, 'saman', 'saman', 'Male', 715555555, '214578994v', 'saman@gmail.com', '', 'sahan', 'sahan', 0, '2019-11-16 08:15:11'),
+(2, 'waruni', 'waruni', 'Female', 712222888, '124578964v', 'waruni@gmail.com', '', 'waruni', 'waruni', 1, '2019-11-16 16:29:44'),
+(3, 'mahela', 'mahela', 'Male', 705555555, '214578994v', 'mahela@gmail.com', '', 'mahela', 'mahela', 1, '2019-11-16 16:29:58'),
+(4, 'Pawan', 'Pawan', 'Male', 703333333, '124578964v', 'pawan@gmail.com', '', 'Pawan', 'Pawan', 0, '2019-11-16 16:00:24'),
+(5, 'pika', 'pika', 'Female', 705522881, '214578994v', 'pika@yahoomail.com', '', 'pika', 'pika', 1, '2019-11-16 16:06:57'),
+(6, 'kalpi', 'kalpi', 'Female', 112523785, '459862138v', 'kalpi@ymail.com', '', 'kalpi', 'kalpi', 1, '2019-11-16 16:29:17'),
+(7, 'keshani', 'keshani', 'Female', 754861236, '856214523v', 'keshani@gmail.com', '', 'keshani', 'keshani', 1, '2019-11-16 16:31:07'),
+(8, 'upul', 'upul', 'Male', 705555555, '214578994v', 'upul@gmail.com', '', 'upul', 'upul', 1, '2019-11-16 16:33:52'),
+(9, 'kapila', 'kapila', 'Male', 703333333, '124578964v', 'kapila@gmail.com', '', 'kapila', 'kapila', 0, '2019-11-16 16:32:05'),
+(10, 'pasan', 'pasan', 'Male', 703333333, '124578964v', 'pasan@yahomail.com', '', '', '', 0, '2019-11-16 16:44:30');
 
 -- --------------------------------------------------------
 
@@ -194,7 +217,6 @@ CREATE TABLE `parking_spaces` (
   `name` varchar(100) DEFAULT NULL,
   `address` varchar(250) NOT NULL,
   `description` longtext NOT NULL,
-  `open_status` varchar(20) NOT NULL,
   `reservation_status` varchar(20) NOT NULL,
   `verified` tinyint(1) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -204,11 +226,13 @@ CREATE TABLE `parking_spaces` (
 -- Dumping data for table `parking_spaces`
 --
 
-INSERT INTO `parking_spaces` (`id`, `landowner_id`, `admin_id`, `name`, `address`, `description`, `open_status`, `reservation_status`, `verified`, `created_at`) VALUES
-(1, 1, 1, 'Marino mall', 'pettah', '', '1', '1', 0, '2019-11-12 11:19:23'),
-(2, 2, 3, 'kelaniya', 'kelaniya', '', '0', '1', 1, '2019-11-14 04:02:21'),
-(3, 2, 1, 'Pannipitiya', 'Mawatha', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '1', '0', 1, '2019-11-14 07:20:45'),
-(4, 3, 1, 'Kottawa', 'Bank', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '0', '1', 1, '2019-11-14 07:22:28');
+INSERT INTO `parking_spaces` (`id`, `landowner_id`, `admin_id`, `name`, `address`, `description`, `reservation_status`, `verified`, `created_at`) VALUES
+(1, 1, 1, 'Marino mall', 'pettah', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '1', 0, '2019-11-16 15:58:17'),
+(2, 2, 3, 'kelaniya', 'kelaniya', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '1', 1, '2019-11-16 15:58:27'),
+(3, 2, 1, 'Pannipitiya', 'Mawatha', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '0', 1, '2019-11-14 07:20:45'),
+(4, 3, 1, 'Kottawa', 'Bank', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '1', 1, '2019-11-14 07:22:28'),
+(5, 1, 2, 'Piliyandala', 'Piliyandala', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand the surface of the lot/field', '1', 0, '2019-11-16 15:57:58'),
+(6, 2, 4, 'Pitakotuwa', 'pitakotuwa', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '1', 0, '2019-11-16 17:07:48');
 
 -- --------------------------------------------------------
 
@@ -240,6 +264,7 @@ CREATE TABLE `parking_vehicle_types` (
   `vehicle_type` varchar(150) NOT NULL,
   `total_no_of_vehicles` int(11) NOT NULL,
   `no_of_vehicles_parked` int(11) DEFAULT NULL,
+  `number_reserved` int(11) NOT NULL,
   `amount_per_hour` double NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -248,8 +273,18 @@ CREATE TABLE `parking_vehicle_types` (
 -- Dumping data for table `parking_vehicle_types`
 --
 
-INSERT INTO `parking_vehicle_types` (`parking_space_id`, `vehicle_type`, `total_no_of_vehicles`, `no_of_vehicles_parked`, `amount_per_hour`, `created_at`) VALUES
-(1, 'car', 12, 3, 50, '2019-11-14 23:25:53');
+INSERT INTO `parking_vehicle_types` (`parking_space_id`, `vehicle_type`, `total_no_of_vehicles`, `no_of_vehicles_parked`, `number_reserved`, `amount_per_hour`, `created_at`) VALUES
+(1, 'bikes', 20, 0, 5, 50, '2019-11-16 17:14:24'),
+(1, 'car', 12, 3, 0, 50, '2019-11-14 23:25:53'),
+(1, 'foot bicycle', 20, 10, 5, 30, '2019-11-16 17:16:34'),
+(1, 'lorry', 3, 0, 3, 80, '2019-11-16 17:16:34'),
+(1, 'Three wheel', 5, 2, 0, 60, '2019-11-16 17:14:24'),
+(2, 'bowser', 3, 0, 0, 150, '2019-11-16 17:20:03'),
+(2, 'car', 15, 8, 3, 45, '2019-11-16 17:18:44'),
+(2, 'lorry', 15, 10, 1, 30, '2019-11-16 17:18:44'),
+(3, 'bus', 4, 2, 0, 90, '2019-11-16 17:20:03'),
+(4, 'bike', 14, 10, 2, 30, '2019-11-16 17:17:41'),
+(4, 'car', 3, 1, 1, 50, '2019-11-16 17:17:41');
 
 -- --------------------------------------------------------
 
@@ -291,7 +326,11 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`id`, `driver_id`, `parking_space_id`, `duration_from`, `duration_to`, `created_at`, `vehicle_type`) VALUES
-(2, 3, 1, '2019-11-12 22:00:00', '2019-11-13 04:00:00', '2019-11-12 16:58:45', '');
+(1, 4, 1, '2022-00-00 00:00:00', '2028-00-00 00:00:00', '2019-11-16 17:34:52', 'car'),
+(2, 3, 1, '2019-11-12 22:00:00', '2019-11-13 04:00:00', '2019-11-16 17:57:02', 'lorry'),
+(3, 2, 3, '2019-11-13 06:00:00', '2019-11-13 12:00:00', '2019-11-16 17:57:14', 'lorry'),
+(4, 1, 5, '2019-11-08 00:00:00', '2019-11-08 11:00:00', '2019-11-16 17:57:43', 'car'),
+(5, 2, 1, '2019-11-20 00:00:00', '2019-11-22 08:00:00', '2019-11-16 17:58:47', 'bike');
 
 -- --------------------------------------------------------
 
@@ -465,57 +504,68 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `drivers`
 --
 ALTER TABLE `drivers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `landowners`
 --
 ALTER TABLE `landowners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT for table `parking_spaces`
 --
 ALTER TABLE `parking_spaces`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `vehicles`
 --
 ALTER TABLE `vehicles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- Constraints for dumped tables
 --
@@ -550,8 +600,7 @@ ALTER TABLE `parking_vehicle_types`
 --
 ALTER TABLE `reservations`
   ADD CONSTRAINT `reservation_driver` FOREIGN KEY (`driver_id`) REFERENCES `drivers` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `reservation_parking_space` FOREIGN KEY (`parking_space_id`) REFERENCES `parking_spaces` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `reservation_vehicle` FOREIGN KEY (`id`) REFERENCES `vehicles` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `reservation_parking_space` FOREIGN KEY (`parking_space_id`) REFERENCES `parking_spaces` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `reviews`
@@ -565,6 +614,7 @@ ALTER TABLE `reviews`
 --
 ALTER TABLE `vehicles`
   ADD CONSTRAINT `vehicle_owner` FOREIGN KEY (`driver_id`) REFERENCES `drivers` (`id`) ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

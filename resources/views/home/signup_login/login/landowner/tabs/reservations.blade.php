@@ -6,7 +6,6 @@
         <tr>
           <th>ID</th>
           <th>driver_id</th>
-          <th>parking_space_id</th>
           <th>duration_from</th>
           <th>duration_to</th>
           <th>vehicle type</th>
@@ -18,7 +17,6 @@
           <tr>
               <td>{{$reservation->id}}</td>
               <td>{{$reservation->driver_id}}</td>
-              <td>{{$reservation->parking_space_id}}</td>
               <td>{{$reservation->duration_from}}</td>
               <td>{{$reservation->duration_to}}</td>
               <td>{{$reservation->vehicle_type}}</td>

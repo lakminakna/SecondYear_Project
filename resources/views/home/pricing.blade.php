@@ -46,24 +46,22 @@
                             </ul>
                             <div class="sign_up">
                               <div class="col-md-7">
-                                <p><a href="{{route('register')}}">sign up</a></p>
+                                <p><a href="signup">sign up</a></p>
                               </div>
                               <div class="col-md-5">
-                                <p><a href="{{route('login')}}">Login</a></p>
+                                <p><a href="signin">Login</a></p>
                               </div>
                             </div>
 
                         </div>
                     </div>
                 </div>
-
-                @include('home.driver')
-                @include('home.landowner')
+                @include('home.pricingContent')
             </div>
         </header>
 
 
-                @include('home.admin')
+              
 
 
         <footer class="footer">

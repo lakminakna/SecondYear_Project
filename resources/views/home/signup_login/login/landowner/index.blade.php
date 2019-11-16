@@ -18,11 +18,17 @@
 </head>
 <body>
     <div class="t-r links">
-      <i class="fas fa-arrow-left"></i><a href="{{ url('/signin') }}">BACK</a>
+      <i class="fas fa-arrow-left"></i><a href="{{ url('/signin') }}">LOGOUT</a>
     </div>
 
   <h2>LandOwner Page</h2>
-  <p>Click on the buttons inside the tabbed menu:</p>
+  <p>
+    <span style="color: #ff9f43">Welcome</span>: {{$id->first_name}}
+    &emsp;&emsp;&emsp;&emsp;
+    <span style="color: #ff9f43">No of Lands</span>: {{$landowner_parking_spaces_count}}
+    &emsp;&emsp;&emsp;&emsp;
+    <span style="color: #ff9f43">No of Reservation</span>:  {{$reservations_count}}</p>
+
 
 
 <button class="tablink" onclick="openPage('my_account', this, 'red')" id="defaultOpen">My Account</button>
