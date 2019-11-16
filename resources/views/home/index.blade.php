@@ -46,10 +46,10 @@
                             </ul>
                             <div class="sign_up">
                               <div class="col-md-7">
-                                <p><a href="signup">sign up</a></p>
+                                <p><a href="{{route('register')}}">sign up</a></p>
                               </div>
                               <div class="col-md-5">
-                                <p><a href="signin">Login</a></p>
+                                <p><a href="{{route('login')}}">Login</a></p>
                               </div>
                             </div>
 

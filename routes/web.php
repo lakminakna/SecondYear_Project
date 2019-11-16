@@ -39,3 +39,20 @@ Route::resource('lrs', 'Auth/RegisterController');
 
 // Route::get('landpage', function () {return view('home/signup_login/login/index');});
 Route::resource('landownerpage', 'LandownerpageController');
+
+Route::get('google', function () {
+    return view('googleAuth');
+});
+    
+Route::get('auth/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('callback/auth/google', 'Auth\LoginController@handleGoogleCallback');
+
+Route::get('facebook', function () {
+    return view('facebook');
+});
+Route::get('auth/facebook', 'Auth\LoginController@redirectToFacebook');
+Route::get('auth/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
