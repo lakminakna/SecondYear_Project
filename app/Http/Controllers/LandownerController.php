@@ -17,7 +17,7 @@ class LandownerController extends Controller
     {
        $landowners = Landowner::all();
 
-        return view('crud.landowners.index', compact('landowners'));
+        return view('landowners.index', compact('landowners'));
 
     }
 
@@ -28,7 +28,7 @@ class LandownerController extends Controller
      */
     public function create()
     {
-         return view('crud.landowners.create');
+         return view('landowners.create');
     }
 
     /**
@@ -77,7 +77,7 @@ class LandownerController extends Controller
     public function edit($id)
     {
          $landowner = Landowner::find($id);
-        return view('crud.landowners.edit', compact('landowner'));
+        return view('landowners.edit', compact('landowner'));
     }
 
     /**

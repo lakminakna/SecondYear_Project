@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">      
-    <title>ParKing</title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ParKing</title>
 
-    <link rel="shortcut icon" href="images/icon/logo.png" type="image/x-icon"> <!-- title bar icon -->
+    <link rel="shortcut icon" href="images/icon/logo.png" type="image/x-icon">
     <link rel="icon" href="images/icon/logo.png" type="image/x-icon" >
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -40,7 +40,7 @@
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="#">Home</a></li>
                                 <li><a href="#">Service</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Extension</a></li>
                                 <li><a href="#">Pricing</a></li>
                                 <li><a href="#">Help</a></li>
                             </ul>
@@ -77,7 +77,7 @@
                             <ul>
                                 <li><a href="#">Privecy Policy</a></li>
                                 <li><a href="#">About Us</a></li>
-                                
+                                <li><a href="#">About Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                                     <ul>
                                         <li><a href="#">Home</a></li>
                                         <li><a href="#">Service</a></li>
-                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="#">Extension</a></li>
                                         <li><a href="#">Pricing</a></li>
                                         <li><a href="#">Help</a></li>
                                     </ul>

@@ -7,8 +7,8 @@
     </div>
     <div class="col-md-6">
       <div class="text">
-          <h3>Want to enjoy easy parking? </h3>
-          <h6><p>Fed up of overpaying for parking and getting tickets for parking violations? </p> <p>Get directions to the nearest parking space.</p></h6>
+          <h3>Ready to be a Driver? </h3>
+          <h6>Earn a thousands of rupees a year by renting out your empty land as a parking space</h6>
           <a class="button white" href="#">F A Q <sub>s</sub></a>
           <a class="button" href="signup">Get Started</a>
       </div>

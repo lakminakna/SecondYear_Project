@@ -29,7 +29,6 @@ Route::resource('parking_vehicle_types', 'Parking_vehicle_typeController');
 Route::resource('reservations', 'ReservationController');
 Route::resource('reviews', 'ReviewController');
 Route::resource('vehicles', 'VehicleController');
-Route::resource('contact_us', 'Contact_usController');
 
 // USER Login & Register
 Route::get('lr', function () {return view('Register/landowner');});
@@ -38,4 +37,5 @@ Route::resource('lrs', 'Auth/RegisterController');
 
 
 // Route::get('landpage', function () {return view('home/signup_login/login/index');});
-Route::resource('landownerpage', 'LandownerpageController');
+Route::resource('landpage', 'LandpageController');
+Route::resource('adminpage', 'adminloginController');

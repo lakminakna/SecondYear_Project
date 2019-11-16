@@ -17,7 +17,7 @@ class Parking_spaceController extends Controller
     {
        $parking_spaces = Parking_space::all();
 
-        return view('crud.parking_spaces.index', compact('parking_spaces'));
+        return view('parking_spaces.index', compact('parking_spaces'));
 
     }
 
@@ -28,7 +28,7 @@ class Parking_spaceController extends Controller
      */
     public function create()
     {
-         return view('crud.parking_spaces.create');
+         return view('parking_spaces.create');
     }
 
     /**
@@ -77,7 +77,7 @@ class Parking_spaceController extends Controller
     public function edit($id)
     {
          $parking_space = Parking_space::find($id);
-        return view('crud.parking_spaces.edit', compact('parking_space'));
+        return view('parking_spaces.edit', compact('parking_space'));
     }
 
     /**

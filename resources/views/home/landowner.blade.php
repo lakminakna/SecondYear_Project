@@ -7,10 +7,10 @@
     </div>
     <div class="col-md-6">
       <div class="text">
-          <h3>Ready to earn from your bare land?</h3>
-          <h6><p>Have a bare land of no use?</p><p>Earn a thousands of rupees a year by renting out your empty land as a parking space</p></h6>
+          <h3>Are you Ready Landowner</h3>
+          <h6>Earn a thousands of rupees a year by renting out your empty land as a parking space</h6>
           <a class="button white" href="#">F A Q <sub>s</sub></a>
-          <a class="button" href="signup" background-color="yellow">Get Started</a>
+          <a class="button" href="signup">Get Started</a>
       </div>
     </div>
 </div>

@@ -9,7 +9,7 @@ use App\Reservation;
 use App\Parking_vehicle_type;
 use App\Landowner;
 
-class LandownerpageController extends Controller
+class LandpageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,7 @@ class LandownerpageController extends Controller
        $reservations = Reservation::all();
        $paking_spaces = Parking_vehicle_type::all();
 
-         return view('home.signup_login.login.landowner.index', compact('parking_spaces','reservations','paking_spaces','landowners'));
+         return view('home.signup_login.login.land.index', compact('parking_spaces','reservations','paking_spaces','landowners'));
         // return view('home.signup_login.login.tabs.card1', compact('parking_spaces','reservations'));
 
     }

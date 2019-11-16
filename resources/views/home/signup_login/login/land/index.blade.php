@@ -10,11 +10,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/a0408e60a8.js" crossorigin="anonymous"></script>
 
-@include('home/signup_login.login.landowner.style_3')
-@include('home/signup_login.login.landowner.style_4')
+@include('home/signup_login.login.land.style_3')
+@include('home/signup_login.login.land.style_4')
 
-@include('home/signup_login.login.landowner.tabs.style_1')
-@include('home/signup_login.login.landowner.tabs.script_1')
+@include('home/signup_login.login.land.tabs.style_1')
+@include('home/signup_login.login.land.tabs.script_1')
 </head>
 <body>
     <div class="t-r links">
@@ -32,19 +32,19 @@
 <!-- <button class="tablink" onclick="openPage('About', this, 'orange')">About</button> -->
 
 <div id="my_account" class="tabcontent">
-@include('home/signup_login.login.landowner.tabs.account')
+@include('home/signup_login.login.land.tabs.account')
 </div>
 
 <div id="my_lands" class="tabcontent">
-@include('home/signup_login.login.landowner.tabs.lands')
+@include('home/signup_login.login.land.tabs.lands')
 </div>
 
 <div id="paking_spaces" class="tabcontent">
-@include('home/signup_login.login.landowner.tabs.paking_spaces')
+@include('home/signup_login.login.land.tabs.paking_spaces')
 </div>
 
 <div id="reservations" class="tabcontent">
-@include('home/signup_login.login.landowner.tabs.reservations')
+@include('home/signup_login.login.land.tabs.reservations')
 </div>
 
 
