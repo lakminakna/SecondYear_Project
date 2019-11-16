@@ -57,13 +57,11 @@
                     </div>
                 </div>
 
-                @include('home.driver')
-                @include('home.landowner')
             </div>
         </header>
 
 
-                @include('home.admin')
+              
 
 
         <footer class="footer">

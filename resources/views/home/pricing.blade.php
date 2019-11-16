@@ -56,14 +56,12 @@
                         </div>
                     </div>
                 </div>
-
-                @include('home.driver')
-                @include('home.landowner')
+                @include('home.pricingContent')
             </div>
         </header>
 
 
-                @include('home.admin')
+              
 
 
         <footer class="footer">

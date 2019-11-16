@@ -1,5 +1,5 @@
 <div class="container" style="background:black">
-  @foreach($parking_spaces as $parking_space)
+  @foreach($landowner_parking_spaces as $parking_space)
   <div class="row">
     <div class="col">
       <div class="app">

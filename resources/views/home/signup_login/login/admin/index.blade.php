@@ -10,36 +10,37 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/a0408e60a8.js" crossorigin="anonymous"></script>
 
-@include('home/signup_login.login.style_3')
-@include('home/signup_login.login.style_4')
+@include('home/signup_login.login.admin.style_3')
+@include('home/signup_login.login.admin.style_4')
 
-@include('home/signup_login.login.tabs.style_1')
-@include('home/signup_login.login.tabs.script_1')
+@include('home/signup_login.login.admin.tabs.style_1')
 </head>
 <body>
     <div class="t-r links">
-      <i class="fas fa-arrow-left"></i><a href="{{ url('/signin') }}">BACK</a>
+      <i class="fas fa-arrow-left"></i><a href="{{ url('/signin') }}">LOGOUT</a>
     </div>
 
-  <h2>LandOwner Page</h2>
-  <p>Click on the buttons inside the tabbed menu:</p>
+  <h2>Admin Page</h2>
+  <?php //echo $id; ?>
+  <!-- <p>Welcome: @foreach($data as $d){{$d->first_name}}@endforeach</p> -->
+  <p>Welcome: {{$id->first_name}}</p>
 
 
 <button class="tablink" onclick="openPage('my_account', this, 'red')" >My Account</button>
-<button class="tablink" onclick="openPage('my_lands', this, 'green')" id="defaultOpen">My Lands</button>
-<button class="tablink" onclick="openPage('reservations', this, 'blue')">Reservations</button>
+<button class="tablink" onclick="openPage('lands', this, 'green')" id="defaultOpen">Lands</button>
+<button class="tablink" onclick="openPage('messages', this, 'blue')">Messages</button>
 <!-- <button class="tablink" onclick="openPage('About', this, 'orange')">About</button> -->
 
 <div id="my_account" class="tabcontent">
-@include('home/signup_login.login.tabs.my_account')
+@include('home/signup_login.login.admin.tabs.account')
 </div>
 
-<div id="my_lands" class="tabcontent" style="background:white">
-@include('home/signup_login.login.tabs.my_lands')
+<div id="lands" class="tabcontent">
+@include('home/signup_login.login.admin.tabs.lands')
 </div>
 
-<div id="reservations" class="tabcontent">
-@include('home/signup_login.login.tabs.reservations')
+<div id="messages" class="tabcontent">
+@include('home/signup_login.login.admin.tabs.messages')
 </div>
 
 <!-- <div id="About" class="tabcontent">
@@ -47,24 +48,7 @@
   <p>Who we are and what we do.</p>
 </div> -->
 
-<script>
-function openPage(pageName,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(pageName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-}
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
-
+@include('home/signup_login.login.admin.tabs.script_1')
 </body>
 </html>

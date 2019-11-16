@@ -18,28 +18,31 @@
 </head>
 <body>
     <div class="t-r links">
-      <i class="fas fa-arrow-left"></i><a href="{{ url('/signin') }}">BACK</a>
+      <i class="fas fa-arrow-left"></i><a href="{{ url('/signin') }}">LOGOUT</a>
     </div>
 
-  <h2>LandOwner Page</h2>
+  <h2>Driver Page</h2>
   <p>Click on the buttons inside the tabbed menu:</p>
 
 
-<button class="tablink" onclick="openPage('my_account', this, 'red')" id="defaultOpen">My Account</button>
-<button class="tablink" onclick="openPage('my_lands', this, 'green')" >Reservations</button>
-<button class="tablink" onclick="openPage('reservations', this, 'blue')">Reviews</button>
-<!-- <button class="tablink" onclick="openPage('About', this, 'orange')">About</button> -->
+<button class="tablink" onclick="openPage('my_account', this, 'red')" >My Account</button>
+<button class="tablink" onclick="openPage('reservations', this, 'green')" id="defaultOpen">My Reservations</button>
+<button class="tablink" onclick="openPage('reviews', this, 'blue')">Reviews</button>
+<button class="tablink" onclick="openPage('vehicle', this, 'orange')">Vehicle</button>
 
 <div id="my_account" class="tabcontent">
-@include('home/signup_login.login.driver.tabs.my_account')
+@include('home/signup_login.login.driver.tabs.account')
 </div>
 
-<div id="my_lands" class="tabcontent" style="background:white">
-@include('home/signup_login.login.driver.tabs.my_lands')
-</div>
-
-<div id="reservations" class="tabcontent">
+<div id="reservations" class="tabcontent" style="background:white">
 @include('home/signup_login.login.driver.tabs.reservations')
+</div>
+
+<div id="reviews" class="tabcontent">
+@include('home/signup_login.login.driver.tabs.reviews')
+</div>
+<div id="vehicle" class="tabcontent">
+@include('home/signup_login.login.driver.tabs.vehicle')
 </div>
 
 <!-- <div id="About" class="tabcontent">

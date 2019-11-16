@@ -49,7 +49,7 @@ body, html {
 }
 
 #my_account {background-color: black;}
-#my_lands {background-color: black;}
-#reservations {background-color: black;}
+#lands {background-color: #95C868;}
+#messages {background-color: #8BC1A4;}
 /* #About {background-color: black;} */
 </style>

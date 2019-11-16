@@ -21,7 +21,8 @@
       <i class="fas fa-arrow-left"></i><a href="{{ url('/') }}">BACK</a>
     </div>
     <div class="container">
-      <a href="driverpage">
+      <!-- <a href="driverpage"> -->
+      <a href="ld">
       <div class="items">
         <div class="icon-wrapper">
           <i class="fas fa-car"></i>
@@ -31,7 +32,8 @@
           <p>Driver</p>
         </div>
       </div></a>
-      <a href="landownerpage">
+      <!-- <a href="landownerpage"> -->
+      <a href="ll">
       <div class="items">
         <div class="icon-wrapper">
           <i class="fas fa-landmark"></i>
@@ -39,6 +41,17 @@
         </div>
         <div class="project-name">
           <p>Landowner</p>
+        </div>
+      </div></a>
+      <!-- <a href="adminpage"> -->
+      <a href="la">
+      <div class="items">
+        <div class="icon-wrapper">
+          <i class="fas fa-user"></i>
+          <!-- <i class="fa fa-th-list"></i> -->
+        </div>
+        <div class="project-name">
+          <p>Admin</p>
         </div>
       </div></a>
     </div>
