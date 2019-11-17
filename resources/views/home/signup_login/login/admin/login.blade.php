@@ -21,7 +21,9 @@
     background: url("/assets/landowner/img/background.jpg");
 }
    .box{
-    width:600px;
+    position: relative;
+    top: 150px;
+    width:500px;
     margin:0 auto;
     border:1px solid #ccc;
    }
@@ -39,6 +41,20 @@
        text-decoration: none;
        text-transform: uppercase;
    }
+   .label {
+   color: white;
+   padding: 8px;
+   font-family: Arial;
+   font: 15px arial, sans-serif;
+   font-weight: bold;
+ }
+ .label1 {
+ color: white;
+ padding: 8px;
+ font-family: Arial;
+ font: 30px arial, sans-serif;
+ font-weight: bold;
+}
   </style>
  </head>
  <body>
@@ -48,7 +64,7 @@
 
   <br />
   <div class="container box">
-   <h3 align="center">Admin Login</h3><br />
+   <h3 align="center"><span class="label1 success">Admin Login</span></h3><br />
 
    @if(isset(Auth::user()->email))
     <script>window.location="/main/successlogin";</script>
@@ -74,11 +90,11 @@
    <form  action="/loginadmin" method="post">
     {{ csrf_field() }}
     <div class="form-group">
-     <label>Enter Username</label>
+     <label><span class="label success">Enter Username</span></label>
      <input type="text" name="username" class="form-control" />
     </div>
     <div class="form-group">
-     <label>Enter Password</label>
+     <label><span class="label success">Enter Password</span></label>
      <input type="password" name="password" class="form-control" />
     </div>
     <div class="form-group">

@@ -9,10 +9,32 @@ use App\Parking_space;
 use App\Reservation;
 use App\Parking_vehicle_type;
 use App\Landowner;
+use App\Contact;
 
 class User_loginController extends Controller
 {
-  function index()
+  function adminIndex()
+  {
+    $contacts = Contact::all();
+    $parking_spaces = Parking_space::all();
+    $id = DB::table('admins')->where(['username'=>$username,'password'=>$password])->first();
+    $reviews = DB::table('reviews')->get();
+    $data = DB::table('admins')->where(['username'=>$username,'password'=>$password])->get();
+
+    return view('home.signup_login.login.admin.index', compact('username','password','data','id','parking_spaces','reviews','contacts'));
+
+  }
+  function driverIndex()
+  {
+    $landowners = Landowner::all();
+    $parking_spaces = Parking_space::all();
+    $reservations = Reservation::all();
+    $paking_spaces = Parking_vehicle_type::all();
+
+    return view('home.signup_login.login.landowner.index', compact('parking_spaces','reservations','paking_spaces','landowners'));
+
+  }
+  function landownerIndex()
   {
     $landowners = Landowner::all();
     $parking_spaces = Parking_space::all();
@@ -32,7 +54,7 @@ class User_loginController extends Controller
     {
       // echo "Login SuccessFull<br/>";
       $landowners = Landowner::all();
-      $parking_spaces = Parking_space::all();
+      //$parking_spaces = Parking_space::all();
       //$reservations = Reservation::all();
       $parking_space_vehicle = Parking_vehicle_type::all();
 
@@ -41,9 +63,10 @@ class User_loginController extends Controller
       $landowner_parking_spaces_count = DB::table('parking_spaces')->where('landowner_id',$id->id)->count();
       $reservations = DB::table('reservations')->join('parking_spaces', 'reservations.parking_space_id', '=', 'parking_spaces.id')->where('landowner_id',$id->id)->get();
       $reservations_count = DB::table('reservations')->join('parking_spaces', 'reservations.parking_space_id', '=', 'parking_spaces.id')->where('landowner_id',$id->id)->count();
+      $parking_types = DB::table('parking_vehicle_types')->join('parking_spaces', 'parking_vehicle_types.parking_space_id', '=', 'parking_spaces.id')->where('landowner_id',$id->id)->get();
 
       echo "Login SuccessFull<br/>";
-      return view('home.signup_login.login.landowner.index', compact('id','parking_spaces','reservations','landowner_parking_spaces','landowners','reservations_count','landowner_parking_spaces_count'));
+      return view('home.signup_login.login.landowner.index', compact('id','parking_types','reservations','landowner_parking_spaces','landowners','reservations_count','landowner_parking_spaces_count'));
     }
     else
     {
@@ -85,11 +108,14 @@ class User_loginController extends Controller
     {
       // echo "Login SuccessFull<br/>";
       //echo $id[0]->id;
+      $contacts = Contact::all();
       $parking_spaces = Parking_space::all();
+
       $id = DB::table('admins')->where(['username'=>$username,'password'=>$password])->first();
+      // $admins = DB::table('admins')->get();
       $reviews = DB::table('reviews')->get();
 
-      return view('home.signup_login.login.admin.index', compact('data','id','parking_spaces','reviews'));
+      return view('home.signup_login.login.admin.index', compact('username','password','data','id','parking_spaces','reviews','contacts'));
     }
     else
     {

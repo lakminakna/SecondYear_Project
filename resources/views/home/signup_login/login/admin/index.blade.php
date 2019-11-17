@@ -29,7 +29,7 @@
 <button class="tablink" onclick="openPage('my_account', this, 'red')" >My Account</button>
 <button class="tablink" onclick="openPage('lands', this, 'green')" id="defaultOpen">Lands</button>
 <button class="tablink" onclick="openPage('messages', this, 'blue')">Messages</button>
-<!-- <button class="tablink" onclick="openPage('About', this, 'orange')">About</button> -->
+<button class="tablink" onclick="openPage('reviews', this, 'orange')">Reviews</button>
 
 <div id="my_account" class="tabcontent">
 @include('home/signup_login.login.admin.tabs.account')
@@ -41,6 +41,10 @@
 
 <div id="messages" class="tabcontent">
 @include('home/signup_login.login.admin.tabs.messages')
+</div>
+
+<div id="reviews" class="tabcontent">
+@include('home/signup_login.login.admin.tabs.reviews')
 </div>
 
 <!-- <div id="About" class="tabcontent">

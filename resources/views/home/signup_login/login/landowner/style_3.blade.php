@@ -50,7 +50,7 @@ body, html {
 
 #my_account {background-color: black;}
 #my_lands {background-color: white;}
-#paking_spaces {background-color: black;}
+#paking_type {background-color: black;}
 #reservations {background-color: black;}
 
 /* #About {background-color: black;} */

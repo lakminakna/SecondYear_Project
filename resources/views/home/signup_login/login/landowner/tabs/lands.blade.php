@@ -25,8 +25,16 @@
             <!-- <button class="button button2" href="#">View</button> -->
             <!-- <button class="button button2" href="#">Request Update</button> -->
             <!-- <button type="button" href="#">Request Delete</button> -->
-            <button type="button" class="btn btn-outline-info">View</button>
-            <button type="button" class="btn btn-outline-success">Request Update</button>
+            <form action="/landDetails" method="GET" role="search">
+              <input type="hidden" value="{{$parking_space->id}}" name="landDetails_id">
+              <button class="btn btn-outline-success" type="submit">View</button>
+            </form>
+            <!-- <button type="button" class="btn btn-outline-success">Request Update</button> -->
+            <form action="/landEdit" method="GET" role="search">
+              <input type="hidden" value="{{$parking_space->id}}" name="landEdit_id">
+              <button class="btn btn-outline-success" type="submit">Request Update</button>
+            </form>
+
             <button type="button" class="btn btn-outline-danger">Request Delete</button>
 
           </nav>

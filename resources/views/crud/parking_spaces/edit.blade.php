@@ -19,30 +19,22 @@
             @csrf
             <div class="form-group">
 
-                <label for="first_name">First Name:</label>
-                <input type="text" class="form-control" name="first_name" value={{ $parking_space->first_name }} />
+                <label for="first_name"> Name:</label>
+                <input type="text" class="form-control" name="first_name" value={{ $parking_space->name }} />
             </div>
 
             <div class="form-group">
-                <label for="last_name">Last Name:</label>
-                <input type="text" class="form-control" name="last_name" value={{ $parking_space->last_name }} />
+                <label for="last_name">address:</label>
+                <input type="text" class="form-control" name="last_name" value={{ $parking_space->address }} />
             </div>
 
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="text" class="form-control" name="email" value={{ $parking_space->email }} />
+                <label for="email">description:</label>
+                <input type="text" class="form-control" name="email" value={{ $parking_space->description }} />
             </div>
             <div class="form-group">
-                <label for="city">City:</label>
-                <input type="text" class="form-control" name="city" value={{ $parking_space->city }} />
-            </div>
-            <div class="form-group">
-                <label for="country">Country:</label>
-                <input type="text" class="form-control" name="country" value={{ $parking_space->country }} />
-            </div>
-            <div class="form-group">
-                <label for="job_title">Job Title:</label>
-                <input type="text" class="form-control" name="job_title" value={{ $parking_space->job_title }} />
+                <label for="city">reservation_status:</label>
+                <input type="text" class="form-control" name="city" value={{ $parking_space->reservation_status }} />
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>

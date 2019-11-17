@@ -31,7 +31,7 @@ php artisan serve
 
 Common cmd:
 php artisan config:clear
-php artisan cache:clear 
+php artisan cache:clear
 php artisan key:generate
 php artisan serve
 

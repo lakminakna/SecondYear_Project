@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 16, 2019 at 07:22 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Host: localhost:3306
+-- Generation Time: Nov 17, 2019 at 04:13 AM
+-- Server version: 5.7.28
+-- PHP Version: 7.1.33-1+ubuntu18.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `parking`
+-- Database: `parkme`
 --
 
 -- --------------------------------------------------------
@@ -53,10 +51,10 @@ INSERT INTO `admins` (`id`, `first_name`, `last_name`, `contact_no`, `username`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact_us`
+-- Table structure for table `contacts`
 --
 
-CREATE TABLE `contact_us` (
+CREATE TABLE `contacts` (
   `id` int(11) NOT NULL,
   `first_name` varchar(500) NOT NULL,
   `last_name` varchar(250) NOT NULL,
@@ -67,10 +65,10 @@ CREATE TABLE `contact_us` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `contact_us`
+-- Dumping data for table `contacts`
 --
 
-INSERT INTO `contact_us` (`id`, `first_name`, `last_name`, `email`, `phone_no`, `description`, `created_at`) VALUES
+INSERT INTO `contacts` (`id`, `first_name`, `last_name`, `email`, `phone_no`, `description`, `created_at`) VALUES
 (1, 'lahiru', 'lahiru', 'lahiru@gmail.com', 982345674, 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography ', '2019-11-16 16:38:31'),
 (2, 'malmi', 'malmi', 'malmi@gmail.com', 983445678, 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '2019-11-16 16:39:44'),
 (3, 'sanduni', 'sanduni', 'sanduni@gmail.com', 984556738, 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '2019-11-16 16:40:25'),
@@ -346,6 +344,14 @@ CREATE TABLE `reviews` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `driver_id`, `parking_space_id`, `review`, `created_at`) VALUES
+(1, 1, 1, 'Good Place', '2019-11-16 19:30:51'),
+(2, 1, 2, 'good secure ', '2019-11-16 19:31:06');
+
 -- --------------------------------------------------------
 
 --
@@ -405,9 +411,9 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `contact_us`
+-- Indexes for table `contacts`
 --
-ALTER TABLE `contact_us`
+ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -505,67 +511,56 @@ ALTER TABLE `vehicles`
 --
 ALTER TABLE `admins`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
--- AUTO_INCREMENT for table `contact_us`
+-- AUTO_INCREMENT for table `contacts`
 --
-ALTER TABLE `contact_us`
+ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `drivers`
 --
 ALTER TABLE `drivers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `landowners`
 --
 ALTER TABLE `landowners`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
 --
 -- AUTO_INCREMENT for table `parking_spaces`
 --
 ALTER TABLE `parking_spaces`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `vehicles`
 --
 ALTER TABLE `vehicles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- Constraints for dumped tables
 --
@@ -614,7 +609,6 @@ ALTER TABLE `reviews`
 --
 ALTER TABLE `vehicles`
   ADD CONSTRAINT `vehicle_owner` FOREIGN KEY (`driver_id`) REFERENCES `drivers` (`id`) ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

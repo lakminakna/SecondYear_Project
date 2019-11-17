@@ -1,4 +1,16 @@
 <?php
+
+/* ErrorException  COMMENT ALL THE FOLLOWING USES*/
+
+// //use Illuminate\Http\Request;
+// use Request;
+// use DB;
+// use App\Parking_space;
+// use App\Reservation;
+// use App\Parking_vehicle_type;
+// use App\Landowner;
+// use App\Contact;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,12 +29,11 @@ Route::get('/', function () {return view('home/index');});
 Route::get('signin', function () {return view('home/signup_login/login/base');});
 Route::get('signup', function () {return view('home/signup_login/signup/base');});
 Route::get('images', function () {return view('home/signup_login/login/tabs/card2');});
-Route::get('privacy_policy', function () {return view('home/privacy_policy');});
 Route::get('home', function () {return view('home/index');}); // home is same as '/'
 Route::get('services', function () {return view('home/services');});
+Route::get('privacy_policy', function () {return view('home/privacy_policy');});
 Route::get('pricing', function () {return view('home/pricing');});
 Route::get('help', function () {return view('home/help');});
-
 // Temporary
 Route::get('temp1', function () {return view('Temp/1/index');});
 Route::get('temp2', function () {return view('Temp/2/index');});
@@ -50,8 +61,16 @@ Route::get('la', function () {return view('home/signup_login/login/admin/login')
 Route::post('/loginlandowner','User_loginController@landowner_login');
 Route::post('/logindriver','User_loginController@driver_login');
 Route::post('/loginadmin','User_loginController@admin_login');
+// Route::post('/adminrefresh','User_loginController@adminindex');
+Route::get('/landDetails','Parking_spaceController@detailsIndex');
+Route::get('/landEdit','Parking_spaceController@editIndex');
 
 
 // Route::get('landpage', function () {return view('home/signup_login/login/index');});
 Route::resource('landownerpage', 'LandownerpageController');
 Route::resource('adminpage', 'adminloginController');
+
+
+
+/*Search*/
+Route::any('/search','SearchController@searchAdmin'); 

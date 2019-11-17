@@ -33,7 +33,7 @@
 
 <button class="tablink" onclick="openPage('my_account', this, 'red')" id="defaultOpen">My Account</button>
 <button class="tablink" onclick="openPage('my_lands', this, 'green')" >My Lands</button>
-<button class="tablink" onclick="openPage('paking_spaces', this, 'blue')">Paking Spaces</button>
+<button class="tablink" onclick="openPage('paking_type', this, 'blue')">Paking Vehicle Type</button>
 <button class="tablink" onclick="openPage('reservations', this, 'red')">Reservations</button>
 <!-- <button class="tablink" onclick="openPage('About', this, 'orange')">About</button> -->
 
@@ -45,8 +45,8 @@
 @include('home/signup_login.login.landowner.tabs.lands')
 </div>
 
-<div id="paking_spaces" class="tabcontent">
-@include('home/signup_login.login.landowner.tabs.paking_spaces')
+<div id="paking_type" class="tabcontent">
+@include('home/signup_login.login.landowner.tabs.paking_type')
 </div>
 
 <div id="reservations" class="tabcontent">

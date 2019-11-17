@@ -4,7 +4,7 @@
       <caption>Reservations</caption>
       <thead>
         <tr>
-          <th>ID</th>
+          <th>Parking Space Name</th>
           <th>driver_id</th>
           <th>duration_from</th>
           <th>duration_to</th>
@@ -15,7 +15,16 @@
       <tbody>
           @foreach($reservations as $reservation)
           <tr>
-              <td>{{$reservation->id}}</td>
+              <!-- <td>{{$reservation->id}}</td> -->
+              <td><?php
+                $name = DB::table('parking_spaces')->where('id',$reservation->parking_space_id)->value('name');
+                echo $name;
+              ?>
+              <form action="/landDetails" method="GET" role="search">
+                <input type="hidden" value="{{$reservation->parking_space_id}}" name="landDetails_id">
+                <button class="btn btn-outline-success btn-sm" type="submit">View</button>
+              </form>
+            </td>
               <td>{{$reservation->driver_id}}</td>
               <td>{{$reservation->duration_from}}</td>
               <td>{{$reservation->duration_to}}</td>

@@ -51,5 +51,5 @@ body, html {
 #my_account {background-color: black;}
 #lands {background-color: #95C868;}
 #messages {background-color: #8BC1A4;}
-/* #About {background-color: black;} */
+#reviews {background-color: #E3AC62;}
 </style>

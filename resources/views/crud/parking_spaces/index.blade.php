@@ -10,24 +10,26 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>ID</td>
+          <td>ID|landowner_id|admin_id</td>
           <td>Name</td>
-          <td>Email</td>
-          <td>Job Title</td>
-          <td>City</td>
-          <td>Country</td>
+          <td>address</td>
+          <td>description</td>
+          <td>reservation_status</td>
+          <td>verified</td>
+          <td>created_at</td>
           <td colspan = 2>Actions</td>
         </tr>
     </thead>
     <tbody>
         @foreach($parking_spaces as $parking_space)
         <tr>
-            <td>{{$parking_space->id}}</td>
-            <td>{{$parking_space->first_name}} {{$parking_space->last_name}}</td>
-            <td>{{$parking_space->email}}</td>
-            <td>{{$parking_space->job_title}}</td>
-            <td>{{$parking_space->city}}</td>
-            <td>{{$parking_space->country}}</td>
+            <td>{{$parking_space->id}} {{$parking_space->landowner_id}} {{$parking_space->admin_id}}</td>
+            <td>{{$parking_space->name}}</td>
+            <td>{{$parking_space->address}}</td>
+            <td>{{$parking_space->description}}</td>
+            <td>{{$parking_space->reservation_status}}</td>
+            <td>{{$parking_space->verified}}</td>
+            <td>{{$parking_space->created_at}}</td>
             <td>
                 <a href="{{ route('parking_spaces.edit',$parking_space->id)}}" class="btn btn-primary">Edit</a>
             </td>
