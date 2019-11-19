@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Landowner;
+use App\Admin;
 
 
-class LandownerController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class LandownerController extends Controller
      */
     public function index()
     {
-       $landowners = Landowner::all();
+       $admins = Admin::all();
 
-        return view('crud.landowners.index', compact('landowners'));
+        return view('crud.admins.index', compact('admins'));
 
     }
 
@@ -28,7 +28,7 @@ class LandownerController extends Controller
      */
     public function create()
     {
-         return view('crud.landowners.create');
+         return view('crud.admins.create');
     }
 
     /**
@@ -39,24 +39,28 @@ class LandownerController extends Controller
      */
     public function store(Request $request)
     {
-         $request->validate([
+         $request->validate([               //araval Form Validation
             'first_name'=>'required',
             'last_name'=>'required',
-            'email'=>'required'
+            'email'=>'required',
+            'username'=>'required',
+            'password'=>['required','min:8']
         ]);
 
-        $landowner = new Landowner([
+        $admin = new Admin([
             'first_name' => $request->get('first_name'),
             'last_name' => $request->get('last_name'),
             'email' => $request->get('email'),
-            'gender' => $request->get('gender'),
+            
             'contact_no' => $request->get('contact_no'),
-            'nic' => $request->get('nic'), 
-             'image' => $request->get('image'),
-             'username' => $request->get('username'), 
-             'password' => $request->get('password'), ]);
-        $landowner->save();
-        return redirect('/landowners')->with('success', 'Landowner saved!');
+            'email' => $request->get('email'),
+            
+            'username' => $request->get('username'),
+            'password' => $request->get('password'),
+
+        ]);
+        $admin->save();
+        return redirect('/admins')->with('success', 'New Admin saved!');
     }
 
     /**
@@ -78,8 +82,8 @@ class LandownerController extends Controller
      */
     public function edit($id)
     {
-         $landowner = Landowner::find($id);
-        return view('crud.landowners.edit', compact('landowner'));
+         $admin = Admin::find($id);
+        return view('crud.admins.edit', compact('admin'));
     }
 
     /**
@@ -97,16 +101,23 @@ class LandownerController extends Controller
             'email'=>'required'
         ]);
 
-        $landowner = Landowner::find($id);
-        $landowner->first_name =  $request->get('first_name');
-        $landowner->last_name = $request->get('last_name');
-        $landowner->email = $request->get('email');
-        $landowner->job_title = $request->get('job_title');
-        $landowner->city = $request->get('city');
-        $landowner->country = $request->get('country');
-        $landowner->save();
+        $admin = Admin::find($id);
+        $admin->first_name =  $request->get('first_name');
+        $admin->last_name = $request->get('last_name');
+       
+       
+        $admin->contact_no = $request->get('contact_no');
+         $admin->email = $request->get('email');
+   
+        // $admin->image = $request->get('image');
+        $admin->username = $request->get('username');
+        $admin->password = $request->get('password');
 
-        return redirect('/landowners')->with('success', 'Landowner updated!');
+
+
+        $admin->save();
+
+        return redirect('/admins')->with('success', 'Administrator updated!');
     }
 
     /**
@@ -117,9 +128,9 @@ class LandownerController extends Controller
      */
     public function destroy($id)
     {
-        $landowner = Landowner::find($id);
-        $landowner->delete();
+        $admin = Admin::find($id);
+        $admin->delete();
 
-        return redirect('/landowners')->with('success', 'Landowner deleted!');
+        return redirect('/admins')->with('success', 'Administrator deleted!');
     }
 }

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/css/icofont.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/jquery-ui.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/jQuery.verticalCarousel.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('assets/style.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/styleServices.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/responsive.css') }}">
 </head>
 
@@ -56,12 +56,36 @@
                         </div>
                     </div>
                 </div>
-
+               <div class="container">
+            
+                <div class="text-center welcome-text">
+                
+                     <h1>Services</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                    <h3>Find a parking space</h3>
+                        <p class="text-center description">We are reliable on offering large number of parking spaces.You can find your best option for every journey use parking 
+                        spaces via  website.Find parkings within 5 minutes and whenever you need it,from work journey to weekend trips,shopping to sports stadiums,we've got you 
+                        covered with directions to vehicle parks and  on-street spaces,plus info on availability and restrictions.
+                        </p>
+                    </div>
+                </br>
+                    <div class="col-sm-12">
+                    <h3>Let a space</h3>
+                        <p class="text-center description">If you have a spare parking space ,garge or underused land-why not let it out and enjoy an additional income.
+                        We are responsible on help in make easy tax free money by renting put your parking space .Iy is free to list and only takes a few minutes to get 
+                        up and running.Send your space today and we will rent ut your land.
+                        </p>
+                    </div>
+                </div>
+        </div>
+                
             </div>
         </header>
 
 
-              
+               
 
 
         <footer class="footer">

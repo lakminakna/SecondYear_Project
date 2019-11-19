@@ -47,6 +47,8 @@ Route::resource('reservations', 'ReservationController');
 Route::resource('reviews', 'ReviewController');
 Route::resource('vehicles', 'VehicleController');
 Route::resource('contact_us', 'Contact_usController');
+Route::resource('admins', 'AdminController');
+
 
 // USER Login & Register
 Route::get('lr', function () {return view('Register/landowner');});

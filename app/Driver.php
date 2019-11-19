@@ -18,5 +18,6 @@ class Driver extends Model
       'image' ,
       'username' ,
       'password'
+      
     ];
 }

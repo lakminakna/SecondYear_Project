@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Http\Request;
 
 namespace App\Http\Controllers;
 
@@ -48,18 +49,18 @@ class Parking_spaceController extends Controller
     public function store(Request $request)
     {
          $request->validate([
-            'first_name'=>'required',
-            'last_name'=>'required',
-            'email'=>'required'
+            'name'=>'required',
+            'address'=>'required',
+            'description'=>'required'
         ]);
 
         $parking_space = new Parking_space([
-            'first_name' => $request->get('first_name'),
-            'last_name' => $request->get('last_name'),
-            'email' => $request->get('email'),
-            'job_title' => $request->get('job_title'),
-            'city' => $request->get('city'),
-            'country' => $request->get('country')
+            'name' => $request->get('name'),
+            'address' => $request->get('address'),
+            'description' => $request->get('description'),
+            'reservation_status' => $request->get('reservation_status'),
+            'open_on' => $request->get('open_on'),
+
         ]);
         $parking_space->save();
         return redirect('/parking_spaces')->with('success', 'Parking_space saved!');
@@ -133,6 +134,8 @@ class Parking_spaceController extends Controller
         $parking_space->address = $request->get('address');
         $parking_space->description = $request->get('description');
         $parking_space->reservation_status = $request->get('reservation_status');
+        $parking_space->open_on = $request->get('open_on');
+
         // $parking_space->city = $request->get('city');
         // $parking_space->country = $request->get('country');
         // $parking_space->save();

@@ -12,10 +12,10 @@
         <tr>
           <td>ID|landowner_id|admin_id</td>
           <td>Name</td>
-          <td>address</td>
-          <td>description</td>
-          <td>reservation_status</td>
-          <td>verified</td>
+          <td>Address</td>
+          <td>Description</td>
+          <td>Reservation_status</td>
+          <td>Verified</td>
           <td>created_at</td>
           <td colspan = 2>Actions</td>
         </tr>

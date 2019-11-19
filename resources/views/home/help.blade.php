@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/css/icofont.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/jquery-ui.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/jQuery.verticalCarousel.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('assets/style.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/styleHelp.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/responsive.css') }}">
 </head>
 
@@ -56,12 +56,37 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="container">
+           
+                <div class="text-center welcome-text">
+                
+                     <h1>How Can We Help You?</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                    <img class="driver" src="/images/icon/driver.png" >
+                    <h1 class="text-center">Driver</h1>
+                    <p class="text-center description">You can find parking spaces by just sign in.Maximum of 5 minutes will take 
+                    you to find a parking slot.Parking slots can be selected according tp your vehicle type and the distance .Payment may vary with the type of the vehicle
+                    Responsibility of the rentals will depend on landowner.
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                    <img class="driver" src="/images/icon/landowner.png" >
+                    <h1 class="text-center">Landowner</h1>
+                        <p class="text-center description">To become a landowner you can add you slot after undergone to the verification process.We provide 
+                        you full reliable details and no any wrong details will be provided.As a space owner you have the option to choose Automated or Manual 
+                        pricing to take control of it yourself.If a driver overstays they will be charge in accordance with landowner aggrements.
+                        </p>
+                    </div>
+                </div>
+        </div>
+                
             </div>
         </header>
 
 
-              
+               
 
 
         <footer class="footer">

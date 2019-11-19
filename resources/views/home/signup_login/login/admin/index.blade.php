@@ -27,9 +27,10 @@
 
 
 <button class="tablink" onclick="openPage('my_account', this, 'red')" >My Account</button>
-<button class="tablink" onclick="openPage('lands', this, 'green')" id="defaultOpen">Lands</button>
-<button class="tablink" onclick="openPage('messages', this, 'blue')">Messages</button>
-<button class="tablink" onclick="openPage('reviews', this, 'orange')">Reviews</button>
+<button class="tablink" onclick="openPage('my_account', this, 'yellow')" >Manage Users</button>
+<button class="tablink" onclick="openPage('lands', this, 'green')" id="defaultOpen">Manage Parkings</button>
+<button class="tablink" onclick="openPage('messages', this, 'blue')">User Messages</button>
+<button class="tablink" onclick="openPage('reviews', this, 'orange')">Manage Reviews</button>
 
 <div id="my_account" class="tabcontent">
 @include('home/signup_login.login.admin.tabs.account')
@@ -45,6 +46,10 @@
 
 <div id="reviews" class="tabcontent">
 @include('home/signup_login.login.admin.tabs.reviews')
+</div>
+
+<div id="users" class="tabcontent">
+@include('home/signup_login.login.admin.tabs.users')
 </div>
 
 <!-- <div id="About" class="tabcontent">

@@ -34,7 +34,7 @@ class Contact_usController extends Controller
            
         ]);
         $contact_us->save();
-        return redirect('/')->with('success', 'Message sent!');
+        return redirect('home/index')->with('success', 'Message sent!');
     }
 
     /**

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/css/icofont.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/jquery-ui.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/jQuery.verticalCarousel.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('assets/style.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/stylePricing.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/responsive.css') }}">
 </head>
 
@@ -56,12 +56,28 @@
                         </div>
                     </div>
                 </div>
-                @include('home.pricingContent')
+                <div class="container">
+            
+                <div class="text-center welcome-text">
+                
+                     <h1 >Pricing</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="text-center description">All pricing activities are depend on the landowner.We are not responsible for the rentals that are publish in the website.
+                        There are different pricing ranges depending on types of the vehicle.All rates decided by landowners.They have the responsibility to take any 
+                        decision on the rentals for seperate types of vehicles.As we are get rid of the responsibility check the rentals varying on the type of vehicles 
+                        when refering for our service.
+                        </p>
+                    </div>
+                </div>
+        </div>
+                
             </div>
         </header>
 
 
-              
+               
 
 
         <footer class="footer">
