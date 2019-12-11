@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Nov 17, 2019 at 04:13 AM
--- Server version: 5.7.28
--- PHP Version: 7.1.33-1+ubuntu18.04.1+deb.sury.org+1
+-- Host: 127.0.0.1
+-- Generation Time: Dec 11, 2019 at 06:46 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `parkme`
+-- Database: `parking`
 --
 
 -- --------------------------------------------------------
@@ -33,7 +35,7 @@ CREATE TABLE `admins` (
   `contact_no` int(10) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(250) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -44,9 +46,7 @@ INSERT INTO `admins` (`id`, `first_name`, `last_name`, `contact_no`, `username`,
 (1, 'Akna', 'Lakmini', 702222222, 'lakminakna', 'akna', '2019-11-12 10:12:32'),
 (2, 'Sahan', 'Madusanka', 705555555, 'sahan', 'sahan', '2019-11-12 10:15:22'),
 (3, 'keshani', 'perera', 703333333, 'keshani', 'keshani', '2019-11-12 10:16:04'),
-(4, 'thushi', 'walter', 705555555, 'thushi', 'thushi', '2019-11-16 16:35:05'),
-(5, 'lahiru', 'gamage', 705522881, 'sk', 'sk', '2019-11-16 16:36:23'),
-(6, 'pawan', 'pawan', 98345689, 'pawan', 'pawan', '2019-11-16 16:36:23');
+(4, 'thushi', 'walter', 705555555, 'thushi', 'thushi', '2019-11-16 16:35:05');
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,7 @@ CREATE TABLE `contacts` (
   `email` varchar(150) NOT NULL,
   `phone_no` int(10) NOT NULL,
   `description` varchar(1000) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -91,10 +91,10 @@ CREATE TABLE `drivers` (
   `licence_id` varchar(20) NOT NULL,
   `nic` varchar(12) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `image` blob,
+  `image` blob DEFAULT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(250) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -119,7 +119,7 @@ CREATE TABLE `failed_jobs` (
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -140,7 +140,7 @@ CREATE TABLE `landowners` (
   `username` varchar(100) NOT NULL,
   `password` varchar(250) NOT NULL,
   `verified` tinyint(1) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -184,10 +184,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `parking_opentime`
+-- Table structure for table `opentimes`
 --
 
-CREATE TABLE `parking_opentime` (
+CREATE TABLE `opentimes` (
   `parking_space_id` int(11) NOT NULL,
   `date` varchar(100) NOT NULL,
   `open_from` time NOT NULL,
@@ -195,10 +195,10 @@ CREATE TABLE `parking_opentime` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `parking_opentime`
+-- Dumping data for table `opentimes`
 --
 
-INSERT INTO `parking_opentime` (`parking_space_id`, `date`, `open_from`, `open_till`) VALUES
+INSERT INTO `opentimes` (`parking_space_id`, `date`, `open_from`, `open_till`) VALUES
 (3, 'Monday', '07:00:00', '17:00:00'),
 (3, 'Tuesday', '12:00:00', '31:00:00');
 
@@ -210,27 +210,30 @@ INSERT INTO `parking_opentime` (`parking_space_id`, `date`, `open_from`, `open_t
 
 CREATE TABLE `parking_spaces` (
   `id` int(11) NOT NULL,
-  `landowner_id` int(11) NOT NULL,
-  `admin_id` int(11) NOT NULL,
+  `landowner_id` int(11) DEFAULT NULL,
+  `admin_id` int(11) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
   `address` varchar(250) NOT NULL,
   `description` longtext NOT NULL,
-  `reservation_status` varchar(20) NOT NULL,
-  `verified` tinyint(1) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `reservation_status` varchar(20) DEFAULT NULL,
+  `poya` int(11) DEFAULT 0,
+  `bank` int(11) DEFAULT 0,
+  `public` int(11) DEFAULT 0,
+  `verified` tinyint(1) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `parking_spaces`
 --
 
-INSERT INTO `parking_spaces` (`id`, `landowner_id`, `admin_id`, `name`, `address`, `description`, `reservation_status`, `verified`, `created_at`) VALUES
-(1, 1, 1, 'Marino mall', 'pettah', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '1', 0, '2019-11-16 15:58:17'),
-(2, 2, 3, 'kelaniya', 'kelaniya', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '1', 1, '2019-11-16 15:58:27'),
-(3, 2, 1, 'Pannipitiya', 'Mawatha', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '0', 1, '2019-11-14 07:20:45'),
-(4, 3, 1, 'Kottawa', 'Bank', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '1', 1, '2019-11-14 07:22:28'),
-(5, 1, 2, 'Piliyandala', 'Piliyandala', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand the surface of the lot/field', '1', 0, '2019-11-16 15:57:58'),
-(6, 2, 4, 'Pitakotuwa', 'pitakotuwa', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '1', 0, '2019-11-16 17:07:48');
+INSERT INTO `parking_spaces` (`id`, `landowner_id`, `admin_id`, `name`, `address`, `description`, `reservation_status`, `poya`, `bank`, `public`, `verified`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'Marino mall', 'pettah', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '1', 0, 0, 0, 0, '2019-11-16 15:58:17', NULL),
+(2, 2, 3, 'kelaniya', 'kelaniya', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '1', 0, 0, 0, 1, '2019-11-16 15:58:27', NULL),
+(3, 2, 1, 'Pannipitiya', 'Mawatha', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '0', 0, 0, 0, 1, '2019-11-14 07:20:45', NULL),
+(4, 3, 1, 'Kottawa', 'Bank', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '1', 0, 0, 0, 1, '2019-11-14 07:22:28', NULL),
+(5, 1, 2, 'Piliyandala', 'Piliyandala', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand the surface of the lot/field', '1', 0, 0, 0, 0, '2019-11-16 15:57:58', NULL);
 
 -- --------------------------------------------------------
 
@@ -240,8 +243,8 @@ INSERT INTO `parking_spaces` (`id`, `landowner_id`, `admin_id`, `name`, `address
 
 CREATE TABLE `parking_space_images` (
   `parking_space_id` int(11) NOT NULL,
-  `image` blob,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `image` blob DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -264,7 +267,7 @@ CREATE TABLE `parking_vehicle_types` (
   `no_of_vehicles_parked` int(11) DEFAULT NULL,
   `number_reserved` int(11) NOT NULL,
   `amount_per_hour` double NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -315,7 +318,7 @@ CREATE TABLE `reservations` (
   `parking_space_id` int(11) NOT NULL,
   `duration_from` datetime NOT NULL,
   `duration_to` datetime NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `vehicle_type` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -341,7 +344,7 @@ CREATE TABLE `reviews` (
   `driver_id` int(11) NOT NULL,
   `parking_space_id` int(11) NOT NULL,
   `review` varchar(1000) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -389,7 +392,7 @@ CREATE TABLE `vehicles` (
   `vehicle_no` varchar(7) NOT NULL,
   `type` varchar(100) NOT NULL,
   `colour` varchar(100) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -441,9 +444,9 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `parking_opentime`
+-- Indexes for table `opentimes`
 --
-ALTER TABLE `parking_opentime`
+ALTER TABLE `opentimes`
   ADD PRIMARY KEY (`parking_space_id`,`date`);
 
 --
@@ -511,64 +514,75 @@ ALTER TABLE `vehicles`
 --
 ALTER TABLE `admins`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `drivers`
 --
 ALTER TABLE `drivers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `landowners`
 --
 ALTER TABLE `landowners`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT for table `parking_spaces`
 --
 ALTER TABLE `parking_spaces`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `vehicles`
 --
 ALTER TABLE `vehicles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `parking_opentime`
+-- Constraints for table `opentimes`
 --
-ALTER TABLE `parking_opentime`
+ALTER TABLE `opentimes`
   ADD CONSTRAINT `parking_space_opentime` FOREIGN KEY (`parking_space_id`) REFERENCES `parking_spaces` (`id`) ON UPDATE CASCADE;
 
 --
@@ -609,6 +623,7 @@ ALTER TABLE `reviews`
 --
 ALTER TABLE `vehicles`
   ADD CONSTRAINT `vehicle_owner` FOREIGN KEY (`driver_id`) REFERENCES `drivers` (`id`) ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

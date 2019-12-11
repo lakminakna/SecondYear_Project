@@ -89,7 +89,8 @@
    @endif
 
    <form  action="/loginlandowner" method="post">
-    {{ csrf_field() }}
+
+    <input type="hidden" name="token" value="{{ csrf_field() }}">  <!-- to prevent Cross-site request forgeries -->
     <div class="form-group">
      <label><span class="label success">Enter Username</span></label>
      <input type="text" name="username" class="form-control" />

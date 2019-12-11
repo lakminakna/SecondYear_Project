@@ -38,6 +38,8 @@ Route::get('help', function () {return view('home/help');});
 Route::get('temp1', function () {return view('Temp/1/index');});
 Route::get('temp2', function () {return view('Temp/2/index');});
 Route::get('temp3', function () {return view('Temp/3/index');});
+
+
 // CRUD Controllers
 Route::resource('drivers', 'DriverController');
 Route::resource('landowners', 'LandownerController');
@@ -48,6 +50,8 @@ Route::resource('reviews', 'ReviewController');
 Route::resource('vehicles', 'VehicleController');
 Route::resource('contact_us', 'Contact_usController');
 Route::resource('admins', 'AdminController');
+
+Route::resource('opentimes', 'OpentimeController');
 
 
 // USER Login & Register

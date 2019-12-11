@@ -96,9 +96,9 @@
 
           <div>
                <label for="city">Open on:</label><br>
-              <input type="checkbox" name="opentime" value="Poya"> Poya days
-              <input type="checkbox" name="opentime" value="public_holiday"> Public Holidays
-              <input type="checkbox" name="opentime" value="bank_holiday" > Bank Holidays<br><small>Thesse will be displayed for the users of the application</small><br><br>
+              <input type="checkbox" name="opentime1" value="1"> Poya days
+              <input type="checkbox" name="opentime2" value="1"> Public Holidays
+              <input type="checkbox" name="opentime3" value="1" > Bank Holidays<br><small>Thesse will be displayed for the users of the application</small><br><br>
           </div>
 
            <!-- <div> 
@@ -146,14 +146,14 @@
             </tr>
           </table>
           <br>
-          </div> -->
+          </div>  -->
 
-          <div class="form-group">
+          <!-- <div class="form-group">
                <label for="reservation">Is reservation allowed?</label></br>
               <input type="radio"  name="reservation_status" value="yes"> Allowed<br>
               <input type="radio"  name="reservation_status" value="no"> Not allowed<br>
-          </div>
-          <button type="submit" class="btn btn-primary-outline">Add parking_space</button>
+          </div> -->
+          <button type="submit" class="btn btn-primary-outline">Add Parking</button>
       </form>
   </div>
 </div>

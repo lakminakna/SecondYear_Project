@@ -1,9 +1,8 @@
 <?php
-use Illuminate\Http\Request;
+
 
 namespace App\Http\Controllers;
-
-use Request;
+use Illuminate\Http\Request;
 use App\Parking_space;
 use DB;
 
@@ -58,10 +57,15 @@ class Parking_spaceController extends Controller
             'name' => $request->get('name'),
             'address' => $request->get('address'),
             'description' => $request->get('description'),
-            'reservation_status' => $request->get('reservation_status'),
-            'open_on' => $request->get('open_on'),
+            
+            //'open_on' => $request->get('open_on'),
 
+             'poya' => $request->get('opentime1'),
+             'public' => $request->get('opentime2'),
+             'bank' => $request->get('opentime3'),
+            // 'reservation_status' => $request->get('reservation_status'),
         ]);
+
         $parking_space->save();
         return redirect('/parking_spaces')->with('success', 'Parking_space saved!');
     }
