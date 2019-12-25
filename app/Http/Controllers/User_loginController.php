@@ -65,13 +65,12 @@ class User_loginController extends Controller
       $reservations_count = DB::table('reservations')->join('parking_spaces', 'reservations.parking_space_id', '=', 'parking_spaces.id')->where('landowner_id',$id->id)->count();
       $parking_types = DB::table('parking_vehicle_types')->join('parking_spaces', 'parking_vehicle_types.parking_space_id', '=', 'parking_spaces.id')->where('landowner_id',$id->id)->get();
 
-      echo "Login SuccessFull<br/>";
-      return view('home.signup_login.login.landowner.index', compact('id','parking_types','reservations','landowner_parking_spaces','landowners','reservations_count','landowner_parking_spaces_count'));
+      return view('users.landowner.index', compact('id','parking_types','reservations','landowner_parking_spaces','landowners','reservations_count','landowner_parking_spaces_count'));
     }
     else
     {
       echo "Login Faield Wrong Data Passed";
-      return view('home.signup_login.login.base');
+      return view('login.user.landownerLogin');
 
     }
   }
@@ -89,12 +88,12 @@ class User_loginController extends Controller
       $reservations = Reservation::all();
       $paking_spaces = Parking_vehicle_type::all();
 
-      return view('home.signup_login.login.driver.index', compact('parking_spaces','reservations','paking_spaces','landowners'));
+      return view('users.driver.index', compact('parking_spaces','reservations','paking_spaces','landowners'));
     }
     else
     {
       echo "Login Faield Wrong Data Passed";
-      return view('home.signup_login.login.base');
+      return view('login.users.driverLogin');
 
     }
   }
@@ -115,12 +114,12 @@ class User_loginController extends Controller
       // $admins = DB::table('admins')->get();
       $reviews = DB::table('reviews')->get();
 
-      return view('home.signup_login.login.admin.index', compact('username','password','data','id','parking_spaces','reviews','contacts'));
+      return view('users.admin.index', compact('username','password','data','id','parking_spaces','reviews','contacts'));
     }
     else
     {
       echo "Login Faield Wrong Data Passed";
-      return view('home.signup_login.login.base');
+      return view('login.users.adminLogin');
 
     }
   }

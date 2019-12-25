@@ -11,8 +11,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/a0408e60a8.js" crossorigin="anonymous"></script>
 
-  @include('home/signup_login.login.style_1')
-  @include('home/signup_login.login.style_2')
+  @include('login.style_1')
+  @include('login.style_2')
 
 </head>
 <body>

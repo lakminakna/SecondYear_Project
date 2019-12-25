@@ -10,11 +10,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/a0408e60a8.js" crossorigin="anonymous"></script>
 
-@include('home/signup_login.login.driver.style_3')
-@include('home/signup_login.login.driver.style_4')
+@include('users.driver.style_3')
+@include('users.driver.style_4')
 
-@include('home/signup_login.login.driver.tabs.style_1')
-@include('home/signup_login.login.driver.tabs.script_1')
+@include('users.driver.tabs.style_1')
+@include('users.driver.tabs.script_1')
 </head>
 <body>
     <div class="t-r links">
@@ -24,25 +24,24 @@
   <h2>Driver Page</h2>
   <p>Click on the buttons inside the tabbed menu:</p>
 
-
 <button class="tablink" onclick="openPage('my_account', this, 'red')" >My Account</button>
 <button class="tablink" onclick="openPage('reservations', this, 'green')" id="defaultOpen">My Reservations</button>
 <button class="tablink" onclick="openPage('reviews', this, 'blue')">Reviews</button>
 <button class="tablink" onclick="openPage('vehicle', this, 'orange')">Vehicle</button>
 
 <div id="my_account" class="tabcontent">
-@include('home/signup_login.login.driver.tabs.account')
+@include('users.driver.tabs.account')
 </div>
 
 <div id="reservations" class="tabcontent" style="background:white">
-@include('home/signup_login.login.driver.tabs.reservations')
+@include('users.driver.tabs.reservations')
 </div>
 
 <div id="reviews" class="tabcontent">
-@include('home/signup_login.login.driver.tabs.reviews')
+@include('users.driver.tabs.reviews')
 </div>
 <div id="vehicle" class="tabcontent">
-@include('home/signup_login.login.driver.tabs.vehicle')
+@include('users.driver.tabs.vehicle')
 </div>
 
 <!-- <div id="About" class="tabcontent">
