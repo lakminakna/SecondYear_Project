@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2019 at 06:46 PM
+-- Generation Time: Dec 25, 2019 at 07:41 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -231,9 +231,10 @@ CREATE TABLE `parking_spaces` (
 INSERT INTO `parking_spaces` (`id`, `landowner_id`, `admin_id`, `name`, `address`, `description`, `reservation_status`, `poya`, `bank`, `public`, `verified`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, 'Marino mall', 'pettah', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '1', 0, 0, 0, 0, '2019-11-16 15:58:17', NULL),
 (2, 2, 3, 'kelaniya', 'kelaniya', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand surface of the lot/field', '1', 0, 0, 0, 1, '2019-11-16 15:58:27', NULL),
-(3, 2, 1, 'Pannipitiya', 'Mawatha', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '0', 0, 0, 0, 1, '2019-11-14 07:20:45', NULL),
-(4, 3, 1, 'Kottawa', 'Bank', 'This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.This is my land.', '1', 0, 0, 0, 1, '2019-11-14 07:22:28', NULL),
-(5, 1, 2, 'Piliyandala', 'Piliyandala', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand the surface of the lot/field', '1', 0, 0, 0, 0, '2019-11-16 15:57:58', NULL);
+(3, 2, 1, 'Pannipitiya', 'Mawatha', 'This is my land.This is my land.This is my land.This is my land.This is my land.This ', '0', 0, 0, 0, 1, '2019-12-12 03:35:39', NULL),
+(4, 3, 1, 'Kottawa', 'Bank', 'This is my land.This is my land.This is my land.This is my land.This is my land.This ', '1', 0, 0, 0, 1, '2019-12-12 03:35:52', NULL),
+(5, 1, 2, 'Piliyandala', 'Piliyandala', 'Size of each parking space\r\n• Size and design of driving and turning lanes\r\n• Layout and topography of the land\r\n• Other factors such as handicap-accessible parking\r\nand the surface of the lot/field', '1', 0, 0, 0, 0, '2019-11-16 15:57:58', NULL),
+(10, NULL, NULL, 'street', 'street', 'street', NULL, 1, NULL, 1, NULL, '2019-12-11 21:47:43', '2019-12-11 21:47:43');
 
 -- --------------------------------------------------------
 
@@ -549,7 +550,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `parking_spaces`
 --
 ALTER TABLE `parking_spaces`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `reservations`
