@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parking.lk</title>
+  <title>Parjhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhking.lk</title>
   <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
 </head>
 <body>

@@ -25,7 +25,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::resource('contacts', 'ContactController');
-Route::get('/', function () {return view('home/index');});
+Route::get('/', function () {return view('index/index');});
 Route::get('signin', function () {return view('home/signup_login/login/base');});
 Route::get('signup', function () {return view('home/signup_login/signup/base');});
 Route::get('images', function () {return view('home/signup_login/login/tabs/card2');});
