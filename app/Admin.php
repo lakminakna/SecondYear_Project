@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Driver extends Model
+class Admin extends Model
 {
     protected $fillable = [
       'first_name' ,

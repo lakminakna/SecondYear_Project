@@ -17,18 +17,18 @@
       <form method="post" action="{{ route('parking_spaces.store') }}">
           @csrf
           <div class="form-group">
-              <label for="parking_name">Name of the parking space:</label>
-              <input type="text" class="form-control" name="parking_name" autocomplete="on"/>
+              <label for="name">Name of the parking space:</label>
+              <input type="text" class="form-control" name="name" autocomplete="on" required/>
           </div>
 
           <div class="form-group">
               <label for="address">Address:</label>
-              <input type="text" class="form-control" name="address" autocomplete="on"/>
+              <input type="text" class="form-control" name="address" autocomplete="on" required/>
           </div>
 
           <div class="form-group">
               <label for="description">Description:</label>
-              <input type="textarea" class="form-control" name="description" autocomplete="on"/>
+              <input type="textarea" class="form-control" name="description" autocomplete="on" required/>
           </div>
 
 
@@ -37,7 +37,7 @@
               <label for="image">Images:</label>
               <!-- <input type="file" name="parkingimage"  multiple> -->   <!-- This is the normal way in html -->
               <!-- Laravel multiple image upload verification starts here -->
-               <div class="container">
+              <!-- <div class="container">
       @if (count($errors) > 0)
       <div class="alert alert-danger">
         <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -53,18 +53,18 @@
         <div class="alert alert-success">
           {{ session('success') }}
         </div> 
-        @endif
+        @endif -->
 
     <!-- <h3 class="jumbotron">Laravel Multiple File Upload</h3> -->
-<form method="post" action="{{url('form')}}" enctype="multipart/form-data">
+<!-- <form method="post" action="{{url('form')}}" enctype="multipart/form-data">
   {{csrf_field()}}
 
         <div class="input-group control-group increment" >
-          <input type="file" name="image" class="form-control">  <!-- previously - name="filename[]-->
+          <input type="file" name="image" class="form-control">   previously - name="filename[]
           <div class="input-group-btn"> 
             <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
           </div>
-        </div>
+        </div> -->
         <!-- <div class="clone hide"> 
           <div class="control-group input-group" style="margin-top:10px">
             <input type="file" name="filename[]" class="form-control">
@@ -73,13 +73,13 @@
             </div>
           </div>
         </div>-->
-
+<!-- 
         <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
 
   </form>        
-  </div>
+  </div> -->
 
-  <!-- Laravel multiple image upload verification starts here -->
+  <!-- Laravel multiple image upload verification ends here -->
 
           </div>
 
@@ -96,12 +96,12 @@
 
           <div>
                <label for="city">Open on:</label><br>
-              <input type="checkbox" name="opentime" value="Poya"> Poya days
-              <input type="checkbox" name="opentime" value="public_holiday"> Public Holidays
-              <input type="checkbox" name="opentime" value="bank_holiday" checked> Bank Holidays<br><small>Thesse will be displayed for the users of the application</small><br><br>
+              <input type="checkbox" name="opentime1" value="1"> Poya days
+              <input type="checkbox" name="opentime2" value="1"> Public Holidays
+              <input type="checkbox" name="opentime3" value="1" > Bank Holidays<br><small>Thesse will be displayed for the users of the application</small><br><br>
           </div>
 
-           <div>
+           <!-- <div> 
                <label for="city">Open Time:</label><br>
                <table style="width:100%">
                 <tr>
@@ -146,14 +146,14 @@
             </tr>
           </table>
           <br>
-          </div>
+          </div>  -->
 
-          <div class="form-group">
+          <!-- <div class="form-group">
                <label for="reservation">Is reservation allowed?</label></br>
-              <input type="radio"  name="reservation" value="yes"> Allowed<br>
-              <input type="radio"  name="reservation" value="no"> Not allowed<br>
-          </div>
-          <button type="submit" class="btn btn-primary-outline">Add parking_space</button>
+              <input type="radio"  name="reservation_status" value="yes"> Allowed<br>
+              <input type="radio"  name="reservation_status" value="no"> Not allowed<br>
+          </div> -->
+          <button type="submit" class="btn btn-primary-outline">Add Parking</button>
       </form>
   </div>
 </div>

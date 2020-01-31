@@ -48,15 +48,17 @@ class DriverController extends Controller
         $driver = new Driver([
             'first_name' => $request->get('first_name'),
             'last_name' => $request->get('last_name'),
+            'email' => $request->get('email'),
             'gender' => $request->get('gender'),
             'contact_no' => $request->get('contact_no'),
             'address' => $request->get('address'),
             'licence_id' => $request->get('licence_id'),
             'nic' => $request->get('nic'),
-            'email' => $request->get('email'),
+          
             'image' => $request->get('image'),
             'username' => $request->get('username'),
-            'password' => $request->get('password')
+            'password' => $request->get('password'),
+
         ]);
         $driver->save();
         return redirect('/drivers')->with('success', 'Driver saved!');
@@ -104,9 +106,17 @@ class DriverController extends Controller
         $driver->first_name =  $request->get('first_name');
         $driver->last_name = $request->get('last_name');
         $driver->email = $request->get('email');
-        $driver->job_title = $request->get('job_title');
-        $driver->city = $request->get('city');
-        $driver->country = $request->get('country');
+        $driver->gender = $request->get('gender');
+        $driver->contact_no = $request->get('contact_no');
+        $driver->address = $request->get('address');
+        $driver->nic = $request->get('nic');
+        $driver->licence_id = $request->get('licence_id');
+        $driver->image = $request->get('image');
+        $driver->username = $request->get('username');
+        $driver->password = $request->get('password');
+
+
+
         $driver->save();
 
         return redirect('/drivers')->with('success', 'Driver updated!');
