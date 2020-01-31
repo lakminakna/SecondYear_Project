@@ -3,7 +3,7 @@
 @section('main')
 <div class="row">
 <div class="col-sm-12">
-    <h1 class="display-3">drivers</h1>
+    <h1 class="display-3">Drivers</h1>
      <div>
     <a style="margin: 19px;" href="{{ route('drivers.create')}}" class="btn btn-primary">New driver</a>
     </div>
@@ -18,6 +18,7 @@
           <td>Address</td>
           <td>Liscence ID</td>
           <td>NIC</td>
+          <td>Image</td>
           <td>Username</td>
           <td colspan = 2>Actions</td>
         </tr>
@@ -33,6 +34,7 @@
             <td>{{$driver->address}}</td>
             <td>{{$driver->licence_id}}</td>
             <td>{{$driver->nic}}</td>
+            <td>{{$driver->image}}</td>
             <td>{{$driver->username}}</td>
             <td>
                 <a href="{{ route('drivers.edit',$driver->id)}}" class="btn btn-primary">Edit</a>

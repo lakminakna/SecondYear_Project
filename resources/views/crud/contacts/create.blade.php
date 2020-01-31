@@ -18,29 +18,29 @@
           @csrf
           <div class="form-group">    
               <label for="first_name">First Name:</label>
-              <input type="text" class="form-control" name="first_name"/>
+              <input type="text" class="form-control" name="first_name" required/>
           </div>
 
           <div class="form-group">
               <label for="last_name">Last Name:</label>
-              <input type="text" class="form-control" name="last_name"/>
+              <input type="text" class="form-control" name="last_name" required/>
           </div>
 
           <div class="form-group">
               <label for="email">Email:</label>
-              <input type="text" class="form-control" name="email"/>
+              <input type="text" class="form-control" name="email" required>
           </div>
           <div class="form-group">
               <label for="city">City:</label>
-              <input type="text" class="form-control" name="city"/>
+              <input type="text" class="form-control" name="city" required/>
           </div>
           <div class="form-group">
               <label for="country">Country:</label>
-              <input type="text" class="form-control" name="country"/>
+              <input type="text" class="form-control" name="country" required/>
           </div>
           <div class="form-group">
               <label for="job_title">Job Title:</label>
-              <input type="text" class="form-control" name="job_title"/>
+              <input type="text" class="form-control" name="job_title" required/>
           </div>                         
           <button type="submit" class="btn btn-primary-outline">Add contact</button>
       </form>

@@ -49,10 +49,12 @@ class LandownerController extends Controller
             'first_name' => $request->get('first_name'),
             'last_name' => $request->get('last_name'),
             'email' => $request->get('email'),
-            'job_title' => $request->get('job_title'),
-            'city' => $request->get('city'),
-            'country' => $request->get('country')
-        ]);
+            'gender' => $request->get('gender'),
+            'contact_no' => $request->get('contact_no'),
+            'nic' => $request->get('nic'), 
+             'image' => $request->get('image'),
+             'username' => $request->get('username'), 
+             'password' => $request->get('password'), ]);
         $landowner->save();
         return redirect('/landowners')->with('success', 'Landowner saved!');
     }

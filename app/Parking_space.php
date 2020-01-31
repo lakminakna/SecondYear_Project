@@ -11,10 +11,15 @@ class Parking_space extends Model
       'admin_id' ,
       'name' ,
       'address' ,
-      'image' ,
-      'open_from' ,
-      'open_till' ,
-      'open_status' ,
-      'reservation_status'
+      // 'image' ,
+      // 'open_days'
+      // 'open_from' ,
+      // 'open_till' ,
+      // 'open_status' ,
+      'description',
+      'reservation_status',
+      'poya',
+      'bank',
+      'public'
     ];
 }

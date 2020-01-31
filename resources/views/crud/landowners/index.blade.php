@@ -11,11 +11,15 @@
     <thead>
         <tr>
           <td>ID</td>
-          <td>Name</td>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Gender</td>
+          <td>Contact Number</td>
+          <td>NIC</td>
           <td>Email</td>
-          <td>Job Title</td>
-          <td>City</td>
-          <td>Country</td>
+          <td>Image</td>
+          <td>Username</td>
+          <td>Password</td>
           <td colspan = 2>Actions</td>
         </tr>
     </thead>
@@ -23,11 +27,16 @@
         @foreach($landowners as $landowner)
         <tr>
             <td>{{$landowner->id}}</td>
-            <td>{{$landowner->first_name}} {{$landowner->last_name}}</td>
+            <td>{{$landowner->first_name}}</td>
+            <td>{{$landowner->last_name}}</td>
+            <td>{{$landowner->gender}}</td>
+            <td>{{$landowner->contact_no}}</td>
+            <td>{{$landowner->nic}}</td>
             <td>{{$landowner->email}}</td>
-            <td>{{$landowner->job_title}}</td>
-            <td>{{$landowner->city}}</td>
-            <td>{{$landowner->country}}</td>
+            <td>{{$landowner->image}}</td>
+            <td>{{$landowner->username}}</td>
+            <td>{{$landowner->password}}</td>
+            
             <td>
                 <a href="{{ route('landowners.edit',$landowner->id)}}" class="btn btn-primary">Edit</a>
             </td>

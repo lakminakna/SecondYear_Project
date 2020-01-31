@@ -1,0 +1,42 @@
+
+
+clone my git repo
+and extract in projects folder
+
+it includes DB and the Project
+
+Fisrt create new db (DB name = parking | collection)
+import my parkIng.sql 
+
+secondly go to the extracted file directory 
+and copy ".env example" file 
+and paste it there.
+
+rename it as ".env"
+Go inside and
+edit 
+DB_DATABASE=parking
+DB_USERNAME=root
+DB_PASSWORD=
+
+then open cmd there
+and run the following commands
+
+composer install
+composer dump-autoload
+php artisan key:generate
+
+run project 
+php artisan serve
+
+Common cmd:
+php artisan config:clear
+php artisan cache:clear
+php artisan key:generate
+php artisan serve
+
+Git cmd:
+git add .
+git commit -m "message"
+git push -u origin master
+

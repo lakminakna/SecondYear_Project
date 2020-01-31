@@ -11,6 +11,6 @@ class Contact_us extends Model
       'last_name' ,
       'email' ,
       'phone_no',
-      'description' 
+      'description'
     ];
 }
