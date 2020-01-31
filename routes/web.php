@@ -39,6 +39,3 @@ Route::resource('lrs', 'Auth/RegisterController');
 
 // Route::get('landpage', function () {return view('home/signup_login/login/index');});
 Route::resource('landownerpage', 'LandownerpageController');
-
-
-Route::get('driverMap', function() {return view('driverMap');});
