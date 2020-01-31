@@ -50,6 +50,7 @@ Route::resource('landownerpage', 'LandownerpageController');
 
 /*driver part start*/
 Route::get('driverDashboard',function(){return view('driver/dashboard');});
+Route::resource('drivervehicle','DrivervehicleController');
 /*driver part end*/
 
 Route::resource('adminpage', 'adminloginController');
