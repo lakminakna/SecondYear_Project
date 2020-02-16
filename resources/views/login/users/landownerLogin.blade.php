@@ -17,7 +17,7 @@
   <script src="https://kit.fontawesome.com/a0408e60a8.js" crossorigin="anonymous"></script>
 
   <style type="text/css">
-
+ a { color: #ffff00; } /* CSS link color */
   body {
     background: url("/assets/landowner/img/background.jpg");
 }
@@ -105,5 +105,9 @@
     </div>
    </form>
   </div>
+   <br /><br /><br /><br /><br /><br /><br /><br />
+  <div>
+<h4 align="center"><font color="white">Don't have an Account yet?</font></h4> </div>
+<a href="signup" ><h4 align="center">Create an Account</h4></a>
  </body>
 </html>
