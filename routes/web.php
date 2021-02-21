@@ -45,6 +45,14 @@ Route::get('/landEdit','Parking_spaceController@editIndex');
 
 
 Route::resource('landownerpage', 'LandownerpageController');
+
+
+
+/*driver part start*/
+Route::get('driverDashboard',function(){return view('driver/dashboard');});
+Route::resource('drivervehicle','DrivervehicleController');
+/*driver part end*/
+
 Route::resource('adminpage', 'adminloginController');
 
 
@@ -59,3 +67,4 @@ Route::get('temp3', function () {return view('Temp/3/index');});
 /* USER Login & Register */
 Route::get('lr', function () {return view('Register/landowner');});
 Route::resource('lrs', 'Auth/RegisterController');
+
